@@ -43,7 +43,7 @@ describe BlueApron::SpreeClient do
     end
   end
 
-  shared_examples "a order" do
+  shared_examples "an order" do
     it 'should have checkout steps' do
       expect(subject.checkout_steps.size).to_not eq(0)
     end
@@ -172,7 +172,28 @@ describe BlueApron::SpreeClient do
       end
 
       it_behaves_like "a Hashie::Mash"
-      it_behaves_like "a order"
+      it_behaves_like "an order"
+    end
+  end
+
+  [:next, :advance].each do |method|
+    describe "#{method}" do
+      let(:id) { 'R1234' }
+
+      subject { spree_client.send(method, id) }
+
+      context 'when response is 200' do
+        before(:each) do
+          stubs.put("/api/checkouts/#{id}/#{method}") do |env|
+            validate_json_request(env)
+            [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+          end
+          expect(spree_client).to receive(:connection).and_return(connection)
+        end
+
+        it_behaves_like "a Hashie::Mash"
+        it_behaves_like "an order"
+      end
     end
   end
 
@@ -318,7 +339,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.create_order(order: order) }
 
     it_behaves_like "a Hashie::Mash"
-    it_behaves_like "a order"
+    it_behaves_like "an order"
 
     it 'should have an id' do
       expect(subject.id).to eq(30)

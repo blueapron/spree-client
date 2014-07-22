@@ -9,6 +9,22 @@ module BlueApron
     attr_accessor :api_key
     attr_accessor :url
 
+    def next(order_id)
+      response = connection.put do |request|
+        request.url "/api/checkouts/#{order_id}/next"
+        setup_authenticated_json_request(request)
+      end
+      handle_response(response)
+    end
+
+    def advance(order_id)
+      response = connection.put do |request|
+        request.url "/api/checkouts/#{order_id}/advance"
+        setup_authenticated_json_request(request)
+      end
+      handle_response(response)
+    end
+
     def add_line_item(order_id, line_item, options = {})
       response = connection.post do |request|
         request.url "/api/orders/#{order_id}/line_items"
@@ -126,6 +142,14 @@ module BlueApron
       def initialize(status, body)
         @status = status
         @body = body
+        
+        def errors
+          if @status == 422
+            Hashie::Mash.new JSON.parse(@body)
+          else
+            nil
+          end
+        end
       end
     end
 
