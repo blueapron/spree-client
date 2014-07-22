@@ -1,0 +1,2363 @@
+{
+   "count" : 16,
+   "per_page" : 25,
+   "current_page" : 1,
+   "products" : [
+      {
+         "meta_keywords" : null,
+         "option_types" : [],
+         "shipping_category_id" : 1,
+         "slug" : "ruby-on-rails-ringer-t-shirt",
+         "id" : 5,
+         "total_on_hand" : 10,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : false,
+         "product_properties" : [
+            {
+               "property_name" : "Manufacturer",
+               "property_id" : 1,
+               "product_id" : 5,
+               "value" : "Jerseys",
+               "id" : 17
+            },
+            {
+               "property_name" : "Brand",
+               "property_id" : 2,
+               "product_id" : 5,
+               "value" : "Conditioned",
+               "id" : 18
+            },
+            {
+               "property_name" : "Model",
+               "property_id" : 3,
+               "product_id" : 5,
+               "value" : "TL9002",
+               "id" : 19
+            },
+            {
+               "property_name" : "Shirt Type",
+               "property_id" : 4,
+               "product_id" : 5,
+               "value" : "Ringer T",
+               "id" : 20
+            },
+            {
+               "property_name" : "Sleeve Type",
+               "property_id" : 5,
+               "product_id" : 5,
+               "value" : "Short",
+               "id" : 21
+            },
+            {
+               "property_name" : "Made from",
+               "property_id" : 6,
+               "product_id" : 5,
+               "value" : "100% Vellum",
+               "id" : 22
+            },
+            {
+               "property_name" : "Fit",
+               "property_id" : 7,
+               "product_id" : 5,
+               "value" : "Loose",
+               "id" : 23
+            },
+            {
+               "property_name" : "Gender",
+               "property_id" : 8,
+               "product_id" : 5,
+               "value" : "Men's",
+               "id" : 24
+            }
+         ],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "ROR-00015",
+            "option_values" : [],
+            "slug" : "ruby-on-rails-ringer-t-shirt",
+            "weight" : "0.0",
+            "id" : 5,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/29/large/ror_ringer.jpeg?1405373458",
+                  "alt" : null,
+                  "attachment_height" : 360,
+                  "position" : 1,
+                  "attachment_width" : 360,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "ror_ringer.jpeg",
+                  "small_url" : "/spree/products/29/small/ror_ringer.jpeg?1405373458",
+                  "viewable_id" : 5,
+                  "id" : 29,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:30:58.937Z",
+                  "mini_url" : "/spree/products/29/mini/ror_ringer.jpeg?1405373458",
+                  "product_url" : "/spree/products/29/product/ror_ringer.jpeg?1405373458",
+                  "viewable_type" : "Spree::Variant"
+               },
+               {
+                  "large_url" : "/spree/products/30/large/ror_ringer_back.jpeg?1405373459",
+                  "alt" : null,
+                  "attachment_height" : 360,
+                  "position" : 2,
+                  "attachment_width" : 360,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "ror_ringer_back.jpeg",
+                  "small_url" : "/spree/products/30/small/ror_ringer_back.jpeg?1405373459",
+                  "viewable_id" : 5,
+                  "id" : 30,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:30:59.275Z",
+                  "mini_url" : "/spree/products/30/mini/ror_ringer_back.jpeg?1405373459",
+                  "product_url" : "/spree/products/30/product/ror_ringer_back.jpeg?1405373459",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Ruby on Rails Ringer T-Shirt",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "17.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "19.99",
+            "options_text" : "",
+            "display_price" : "$19.99"
+         },
+         "name" : "Ruby on Rails Ringer T-Shirt",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            7,
+            11
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "19.99",
+         "display_price" : "$19.99"
+      },
+      {
+         "meta_keywords" : null,
+         "option_types" : [],
+         "shipping_category_id" : 1,
+         "slug" : "ruby-on-rails-stein",
+         "id" : 14,
+         "total_on_hand" : 10,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : false,
+         "product_properties" : [
+            {
+               "property_name" : "Type",
+               "property_id" : 9,
+               "product_id" : 14,
+               "value" : "Stein",
+               "id" : 33
+            },
+            {
+               "property_name" : "Size",
+               "property_id" : 10,
+               "product_id" : 14,
+               "value" : "6.75\" tall, 3.75\" dia. base, 3\" dia. rim",
+               "id" : 34
+            }
+         ],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "ROR-00016",
+            "option_values" : [],
+            "slug" : "ruby-on-rails-stein",
+            "weight" : "0.0",
+            "id" : 14,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/31/large/ror_stein.jpeg?1405373459",
+                  "alt" : null,
+                  "attachment_height" : 360,
+                  "position" : 1,
+                  "attachment_width" : 360,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "ror_stein.jpeg",
+                  "small_url" : "/spree/products/31/small/ror_stein.jpeg?1405373459",
+                  "viewable_id" : 14,
+                  "id" : 31,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:30:59.607Z",
+                  "mini_url" : "/spree/products/31/mini/ror_stein.jpeg?1405373459",
+                  "product_url" : "/spree/products/31/product/ror_stein.jpeg?1405373459",
+                  "viewable_type" : "Spree::Variant"
+               },
+               {
+                  "large_url" : "/spree/products/32/large/ror_stein_back.jpeg?1405373459",
+                  "alt" : null,
+                  "attachment_height" : 360,
+                  "position" : 2,
+                  "attachment_width" : 360,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "ror_stein_back.jpeg",
+                  "small_url" : "/spree/products/32/small/ror_stein_back.jpeg?1405373459",
+                  "viewable_id" : 14,
+                  "id" : 32,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:30:59.950Z",
+                  "mini_url" : "/spree/products/32/mini/ror_stein_back.jpeg?1405373459",
+                  "product_url" : "/spree/products/32/product/ror_stein_back.jpeg?1405373459",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Ruby on Rails Stein",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "15.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "16.99",
+            "options_text" : "",
+            "display_price" : "$16.99"
+         },
+         "name" : "Ruby on Rails Stein",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            4,
+            11
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "16.99",
+         "display_price" : "$16.99"
+      },
+      {
+         "meta_keywords" : null,
+         "option_types" : [],
+         "shipping_category_id" : 1,
+         "slug" : "spree-stein",
+         "id" : 15,
+         "total_on_hand" : 10,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : false,
+         "product_properties" : [
+            {
+               "property_name" : "Type",
+               "property_id" : 9,
+               "product_id" : 15,
+               "value" : "Stein",
+               "id" : 35
+            },
+            {
+               "property_name" : "Size",
+               "property_id" : 10,
+               "product_id" : 15,
+               "value" : "6.75\" tall, 3.75\" dia. base, 3\" dia. rim",
+               "id" : 36
+            }
+         ],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "SPR-00016",
+            "option_values" : [],
+            "slug" : "spree-stein",
+            "weight" : "0.0",
+            "id" : 15,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/43/large/spree_stein.jpeg?1405373464",
+                  "alt" : null,
+                  "attachment_height" : 480,
+                  "position" : 1,
+                  "attachment_width" : 480,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "spree_stein.jpeg",
+                  "small_url" : "/spree/products/43/small/spree_stein.jpeg?1405373464",
+                  "viewable_id" : 15,
+                  "id" : 43,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:31:04.108Z",
+                  "mini_url" : "/spree/products/43/mini/spree_stein.jpeg?1405373464",
+                  "product_url" : "/spree/products/43/product/spree_stein.jpeg?1405373464",
+                  "viewable_type" : "Spree::Variant"
+               },
+               {
+                  "large_url" : "/spree/products/44/large/spree_stein_back.jpeg?1405373464",
+                  "alt" : null,
+                  "attachment_height" : 480,
+                  "position" : 2,
+                  "attachment_width" : 480,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "spree_stein_back.jpeg",
+                  "small_url" : "/spree/products/44/small/spree_stein_back.jpeg?1405373464",
+                  "viewable_id" : 15,
+                  "id" : 44,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:31:04.445Z",
+                  "mini_url" : "/spree/products/44/mini/spree_stein_back.jpeg?1405373464",
+                  "product_url" : "/spree/products/44/product/spree_stein_back.jpeg?1405373464",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Spree Stein",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "15.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "16.99",
+            "options_text" : "",
+            "display_price" : "$16.99"
+         },
+         "name" : "Spree Stein",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            4,
+            10
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "16.99",
+         "display_price" : "$16.99"
+      },
+      {
+         "meta_keywords" : "",
+         "option_types" : [],
+         "shipping_category_id" : 1,
+         "slug" : "apache-baseball-jersey",
+         "id" : 7,
+         "total_on_hand" : 10,
+         "available_on" : "2014-07-14T00:00:00.000Z",
+         "has_variants" : false,
+         "product_properties" : [],
+         "meta_description" : "",
+         "master" : {
+            "width" : null,
+            "sku" : "APC-00001",
+            "option_values" : [],
+            "slug" : "apache-baseball-jersey",
+            "weight" : "0.0",
+            "id" : 7,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/33/large/apache_baseball.png?1405373460",
+                  "alt" : null,
+                  "attachment_height" : 484,
+                  "position" : 1,
+                  "attachment_width" : 504,
+                  "attachment_content_type" : "image/png",
+                  "attachment_file_name" : "apache_baseball.png",
+                  "small_url" : "/spree/products/33/small/apache_baseball.png?1405373460",
+                  "viewable_id" : 7,
+                  "id" : 33,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:31:00.281Z",
+                  "mini_url" : "/spree/products/33/mini/apache_baseball.png?1405373460",
+                  "product_url" : "/spree/products/33/product/apache_baseball.png?1405373460",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Apache Baseball Jersey",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "17.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "19.99",
+            "options_text" : "",
+            "display_price" : "$19.99"
+         },
+         "name" : "Apache Baseball Jersey",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            7,
+            9,
+            13
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "19.99",
+         "display_price" : "$19.99"
+      },
+      {
+         "meta_keywords" : null,
+         "option_types" : [],
+         "shipping_category_id" : 1,
+         "slug" : "ruby-baseball-jersey",
+         "id" : 6,
+         "total_on_hand" : 10,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : false,
+         "product_properties" : [],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "RUB-00001",
+            "option_values" : [],
+            "slug" : "ruby-baseball-jersey",
+            "weight" : "0.0",
+            "id" : 6,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/34/large/ruby_baseball.png?1405373460",
+                  "alt" : null,
+                  "attachment_height" : 477,
+                  "position" : 1,
+                  "attachment_width" : 495,
+                  "attachment_content_type" : "image/png",
+                  "attachment_file_name" : "ruby_baseball.png",
+                  "small_url" : "/spree/products/34/small/ruby_baseball.png?1405373460",
+                  "viewable_id" : 6,
+                  "id" : 34,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:31:00.724Z",
+                  "mini_url" : "/spree/products/34/mini/ruby_baseball.png?1405373460",
+                  "product_url" : "/spree/products/34/product/ruby_baseball.png?1405373460",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Ruby Baseball Jersey",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "17.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "19.99",
+            "options_text" : "",
+            "display_price" : "$19.99"
+         },
+         "name" : "Ruby Baseball Jersey",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            7,
+            8
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "19.99",
+         "display_price" : "$19.99"
+      },
+      {
+         "meta_keywords" : null,
+         "option_types" : [],
+         "shipping_category_id" : 1,
+         "slug" : "spree-tote",
+         "id" : 11,
+         "total_on_hand" : 10,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : false,
+         "product_properties" : [
+            {
+               "property_name" : "Type",
+               "property_id" : 9,
+               "product_id" : 11,
+               "value" : "Tote",
+               "id" : 39
+            },
+            {
+               "property_name" : "Size",
+               "property_id" : 10,
+               "product_id" : 11,
+               "value" : "15\" x 18\" x 6\"",
+               "id" : 40
+            }
+         ],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "SPR-00011",
+            "option_values" : [],
+            "slug" : "spree-tote",
+            "weight" : "0.0",
+            "id" : 11,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/36/large/spree_tote_front.jpeg?1405373461",
+                  "alt" : null,
+                  "attachment_height" : 480,
+                  "position" : 1,
+                  "attachment_width" : 480,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "spree_tote_front.jpeg",
+                  "small_url" : "/spree/products/36/small/spree_tote_front.jpeg?1405373461",
+                  "viewable_id" : 11,
+                  "id" : 36,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:31:01.581Z",
+                  "mini_url" : "/spree/products/36/mini/spree_tote_front.jpeg?1405373461",
+                  "product_url" : "/spree/products/36/product/spree_tote_front.jpeg?1405373461",
+                  "viewable_type" : "Spree::Variant"
+               },
+               {
+                  "large_url" : "/spree/products/37/large/spree_tote_back.jpeg?1405373461",
+                  "alt" : null,
+                  "attachment_height" : 480,
+                  "position" : 2,
+                  "attachment_width" : 480,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "spree_tote_back.jpeg",
+                  "small_url" : "/spree/products/37/small/spree_tote_back.jpeg?1405373461",
+                  "viewable_id" : 11,
+                  "id" : 37,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:31:01.963Z",
+                  "mini_url" : "/spree/products/37/mini/spree_tote_back.jpeg?1405373461",
+                  "product_url" : "/spree/products/37/product/spree_tote_back.jpeg?1405373461",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Spree Tote",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "13.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "15.99",
+            "options_text" : "",
+            "display_price" : "$15.99"
+         },
+         "name" : "Spree Tote",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            3,
+            10
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "15.99",
+         "display_price" : "$15.99"
+      },
+      {
+         "meta_keywords" : null,
+         "option_types" : [
+            {
+               "presentation" : "Size",
+               "position" : 1,
+               "name" : "tshirt-size",
+               "id" : 1
+            },
+            {
+               "presentation" : "Color",
+               "position" : 2,
+               "name" : "tshirt-color",
+               "id" : 2
+            }
+         ],
+         "shipping_category_id" : 1,
+         "slug" : "spree-baseball-jersey",
+         "id" : 8,
+         "total_on_hand" : 9,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : false,
+         "product_properties" : [
+            {
+               "property_name" : "Manufacturer",
+               "property_id" : 1,
+               "product_id" : 8,
+               "value" : "Wilson",
+               "id" : 43
+            },
+            {
+               "property_name" : "Brand",
+               "property_id" : 2,
+               "product_id" : 8,
+               "value" : "Wannabe Sports",
+               "id" : 44
+            },
+            {
+               "property_name" : "Model",
+               "property_id" : 3,
+               "product_id" : 8,
+               "value" : "JK1002",
+               "id" : 45
+            },
+            {
+               "property_name" : "Shirt Type",
+               "property_id" : 4,
+               "product_id" : 8,
+               "value" : "Baseball Jersey",
+               "id" : 46
+            },
+            {
+               "property_name" : "Sleeve Type",
+               "property_id" : 5,
+               "product_id" : 8,
+               "value" : "Long",
+               "id" : 47
+            },
+            {
+               "property_name" : "Made from",
+               "property_id" : 6,
+               "product_id" : 8,
+               "value" : "100% cotton",
+               "id" : 48
+            },
+            {
+               "property_name" : "Fit",
+               "property_id" : 7,
+               "product_id" : 8,
+               "value" : "Loose",
+               "id" : 49
+            },
+            {
+               "property_name" : "Gender",
+               "property_id" : 8,
+               "product_id" : 8,
+               "value" : "Men's",
+               "id" : 50
+            }
+         ],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "SPR-00001",
+            "option_values" : [],
+            "slug" : "spree-baseball-jersey",
+            "weight" : "0.0",
+            "id" : 8,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/41/large/spree_jersey.jpeg?1405373463",
+                  "alt" : null,
+                  "attachment_height" : 480,
+                  "position" : 1,
+                  "attachment_width" : 480,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "spree_jersey.jpeg",
+                  "small_url" : "/spree/products/41/small/spree_jersey.jpeg?1405373463",
+                  "viewable_id" : 8,
+                  "id" : 41,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:31:03.406Z",
+                  "mini_url" : "/spree/products/41/mini/spree_jersey.jpeg?1405373463",
+                  "product_url" : "/spree/products/41/product/spree_jersey.jpeg?1405373463",
+                  "viewable_type" : "Spree::Variant"
+               },
+               {
+                  "large_url" : "/spree/products/42/large/spree_jersey_back.jpeg?1405373463",
+                  "alt" : null,
+                  "attachment_height" : 480,
+                  "position" : 2,
+                  "attachment_width" : 480,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "spree_jersey_back.jpeg",
+                  "small_url" : "/spree/products/42/small/spree_jersey_back.jpeg?1405373463",
+                  "viewable_id" : 8,
+                  "id" : 42,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:31:03.761Z",
+                  "mini_url" : "/spree/products/42/mini/spree_jersey_back.jpeg?1405373463",
+                  "product_url" : "/spree/products/42/product/spree_jersey_back.jpeg?1405373463",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Spree Baseball Jersey",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "17.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "19.99",
+            "options_text" : "",
+            "display_price" : "$19.99"
+         },
+         "name" : "Spree Baseball Jersey",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            7,
+            10
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "19.99",
+         "display_price" : "$19.99"
+      },
+      {
+         "meta_keywords" : null,
+         "option_types" : [],
+         "shipping_category_id" : 1,
+         "slug" : "ruby-on-rails-bag",
+         "id" : 2,
+         "total_on_hand" : 10,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : false,
+         "product_properties" : [
+            {
+               "property_name" : "Type",
+               "property_id" : 9,
+               "product_id" : 2,
+               "value" : "Messenger",
+               "id" : 28
+            },
+            {
+               "property_name" : "Size",
+               "property_id" : 10,
+               "product_id" : 2,
+               "value" : "14 1/2\" x 12\" x 5\"",
+               "id" : 29
+            },
+            {
+               "property_name" : "Material",
+               "property_id" : 11,
+               "product_id" : 2,
+               "value" : "600 Denier Polyester",
+               "id" : 30
+            }
+         ],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "ROR-00012",
+            "option_values" : [],
+            "slug" : "ruby-on-rails-bag",
+            "weight" : "0.0",
+            "id" : 2,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/23/large/ror_bag.jpeg?1405373456",
+                  "alt" : null,
+                  "attachment_height" : 360,
+                  "position" : 1,
+                  "attachment_width" : 360,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "ror_bag.jpeg",
+                  "small_url" : "/spree/products/23/small/ror_bag.jpeg?1405373456",
+                  "viewable_id" : 2,
+                  "id" : 23,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:30:56.945Z",
+                  "mini_url" : "/spree/products/23/mini/ror_bag.jpeg?1405373456",
+                  "product_url" : "/spree/products/23/product/ror_bag.jpeg?1405373456",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Ruby on Rails Bag",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "21.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "22.99",
+            "options_text" : "",
+            "display_price" : "$22.99"
+         },
+         "name" : "Ruby on Rails Bag",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            3,
+            11
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "22.99",
+         "display_price" : "$22.99"
+      },
+      {
+         "meta_keywords" : null,
+         "option_types" : [],
+         "shipping_category_id" : 1,
+         "slug" : "ruby-on-rails-mug",
+         "id" : 13,
+         "total_on_hand" : 10,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : false,
+         "product_properties" : [
+            {
+               "property_name" : "Type",
+               "property_id" : 9,
+               "product_id" : 13,
+               "value" : "Mug",
+               "id" : 31
+            },
+            {
+               "property_name" : "Size",
+               "property_id" : 10,
+               "product_id" : 13,
+               "value" : "4.5\" tall, 3.25\" dia.",
+               "id" : 32
+            }
+         ],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "ROR-00014",
+            "option_values" : [],
+            "slug" : "ruby-on-rails-mug",
+            "weight" : "0.0",
+            "id" : 13,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/27/large/ror_mug.jpeg?1405373458",
+                  "alt" : null,
+                  "attachment_height" : 360,
+                  "position" : 1,
+                  "attachment_width" : 360,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "ror_mug.jpeg",
+                  "small_url" : "/spree/products/27/small/ror_mug.jpeg?1405373458",
+                  "viewable_id" : 13,
+                  "id" : 27,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:30:58.291Z",
+                  "mini_url" : "/spree/products/27/mini/ror_mug.jpeg?1405373458",
+                  "product_url" : "/spree/products/27/product/ror_mug.jpeg?1405373458",
+                  "viewable_type" : "Spree::Variant"
+               },
+               {
+                  "large_url" : "/spree/products/28/large/ror_mug_back.jpeg?1405373458",
+                  "alt" : null,
+                  "attachment_height" : 360,
+                  "position" : 2,
+                  "attachment_width" : 360,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "ror_mug_back.jpeg",
+                  "small_url" : "/spree/products/28/small/ror_mug_back.jpeg?1405373458",
+                  "viewable_id" : 13,
+                  "id" : 28,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:30:58.619Z",
+                  "mini_url" : "/spree/products/28/mini/ror_mug_back.jpeg?1405373458",
+                  "product_url" : "/spree/products/28/product/ror_mug_back.jpeg?1405373458",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Ruby on Rails Mug",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "11.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "13.99",
+            "options_text" : "",
+            "display_price" : "$13.99"
+         },
+         "name" : "Ruby on Rails Mug",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            4,
+            11
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "13.99",
+         "display_price" : "$13.99"
+      },
+      {
+         "meta_keywords" : null,
+         "option_types" : [],
+         "shipping_category_id" : 1,
+         "slug" : "spree-jr-spaghetti",
+         "id" : 9,
+         "total_on_hand" : 10,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : false,
+         "product_properties" : [
+            {
+               "property_name" : "Manufacturer",
+               "property_id" : 1,
+               "product_id" : 9,
+               "value" : "Jerseys",
+               "id" : 51
+            },
+            {
+               "property_name" : "Brand",
+               "property_id" : 2,
+               "product_id" : 9,
+               "value" : "Resiliance",
+               "id" : 52
+            },
+            {
+               "property_name" : "Model",
+               "property_id" : 3,
+               "product_id" : 9,
+               "value" : "TL174",
+               "id" : 53
+            },
+            {
+               "property_name" : "Shirt Type",
+               "property_id" : 4,
+               "product_id" : 9,
+               "value" : "Jr. Spaghetti T",
+               "id" : 54
+            },
+            {
+               "property_name" : "Sleeve Type",
+               "property_id" : 5,
+               "product_id" : 9,
+               "value" : "None",
+               "id" : 55
+            },
+            {
+               "property_name" : "Made from",
+               "property_id" : 6,
+               "product_id" : 9,
+               "value" : "90% Cotton, 10% Nylon",
+               "id" : 56
+            },
+            {
+               "property_name" : "Fit",
+               "property_id" : 7,
+               "product_id" : 9,
+               "value" : "Form",
+               "id" : 57
+            },
+            {
+               "property_name" : "Gender",
+               "property_id" : 8,
+               "product_id" : 9,
+               "value" : "Women's",
+               "id" : 58
+            }
+         ],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "SPR-00013",
+            "option_values" : [],
+            "slug" : "spree-jr-spaghetti",
+            "weight" : "0.0",
+            "id" : 9,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/40/large/spree_spaghetti.jpeg?1405373463",
+                  "alt" : null,
+                  "attachment_height" : 480,
+                  "position" : 1,
+                  "attachment_width" : 480,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "spree_spaghetti.jpeg",
+                  "small_url" : "/spree/products/40/small/spree_spaghetti.jpeg?1405373463",
+                  "viewable_id" : 9,
+                  "id" : 40,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:31:03.056Z",
+                  "mini_url" : "/spree/products/40/mini/spree_spaghetti.jpeg?1405373463",
+                  "product_url" : "/spree/products/40/product/spree_spaghetti.jpeg?1405373463",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Spree Jr. Spaghetti",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "17.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "19.99",
+            "options_text" : "",
+            "display_price" : "$19.99"
+         },
+         "name" : "Spree Jr. Spaghetti",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            6,
+            10
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "19.99",
+         "display_price" : "$19.99"
+      },
+      {
+         "meta_keywords" : null,
+         "option_types" : [],
+         "shipping_category_id" : 1,
+         "slug" : "ruby-on-rails-tote",
+         "id" : 1,
+         "total_on_hand" : 81,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : false,
+         "product_properties" : [
+            {
+               "property_name" : "Type",
+               "property_id" : 9,
+               "product_id" : 1,
+               "value" : "Tote",
+               "id" : 25
+            },
+            {
+               "property_name" : "Size",
+               "property_id" : 10,
+               "product_id" : 1,
+               "value" : "15\" x 18\" x 6\"",
+               "id" : 26
+            },
+            {
+               "property_name" : "Material",
+               "property_id" : 11,
+               "product_id" : 1,
+               "value" : "Canvas",
+               "id" : 27
+            }
+         ],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "ROR-00011",
+            "option_values" : [],
+            "slug" : "ruby-on-rails-tote",
+            "weight" : "0.0",
+            "id" : 1,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/21/large/ror_tote.jpeg?1405373456",
+                  "alt" : null,
+                  "attachment_height" : 360,
+                  "position" : 1,
+                  "attachment_width" : 360,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "ror_tote.jpeg",
+                  "small_url" : "/spree/products/21/small/ror_tote.jpeg?1405373456",
+                  "viewable_id" : 1,
+                  "id" : 21,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:30:56.226Z",
+                  "mini_url" : "/spree/products/21/mini/ror_tote.jpeg?1405373456",
+                  "product_url" : "/spree/products/21/product/ror_tote.jpeg?1405373456",
+                  "viewable_type" : "Spree::Variant"
+               },
+               {
+                  "large_url" : "/spree/products/22/large/ror_tote_back.jpeg?1405373456",
+                  "alt" : null,
+                  "attachment_height" : 360,
+                  "position" : 2,
+                  "attachment_width" : 360,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "ror_tote_back.jpeg",
+                  "small_url" : "/spree/products/22/small/ror_tote_back.jpeg?1405373456",
+                  "viewable_id" : 1,
+                  "id" : 22,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:30:56.572Z",
+                  "mini_url" : "/spree/products/22/mini/ror_tote_back.jpeg?1405373456",
+                  "product_url" : "/spree/products/22/product/ror_tote_back.jpeg?1405373456",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Ruby on Rails Tote",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "17.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "15.99",
+            "options_text" : "",
+            "display_price" : "$15.99"
+         },
+         "name" : "Ruby on Rails Tote",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            3,
+            11
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "15.99",
+         "display_price" : "$15.99"
+      },
+      {
+         "meta_keywords" : null,
+         "option_types" : [],
+         "shipping_category_id" : 1,
+         "slug" : "spree-mug",
+         "id" : 16,
+         "total_on_hand" : 10,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : false,
+         "product_properties" : [
+            {
+               "property_name" : "Type",
+               "property_id" : 9,
+               "product_id" : 16,
+               "value" : "Mug",
+               "id" : 37
+            },
+            {
+               "property_name" : "Size",
+               "property_id" : 10,
+               "product_id" : 16,
+               "value" : "4.5\" tall, 3.25\" dia.",
+               "id" : 38
+            }
+         ],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "SPR-00014",
+            "option_values" : [],
+            "slug" : "spree-mug",
+            "weight" : "0.0",
+            "id" : 16,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/45/large/spree_mug.jpeg?1405373464",
+                  "alt" : null,
+                  "attachment_height" : 240,
+                  "position" : 1,
+                  "attachment_width" : 240,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "spree_mug.jpeg",
+                  "small_url" : "/spree/products/45/small/spree_mug.jpeg?1405373464",
+                  "viewable_id" : 16,
+                  "id" : 45,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:31:04.811Z",
+                  "mini_url" : "/spree/products/45/mini/spree_mug.jpeg?1405373464",
+                  "product_url" : "/spree/products/45/product/spree_mug.jpeg?1405373464",
+                  "viewable_type" : "Spree::Variant"
+               },
+               {
+                  "large_url" : "/spree/products/46/large/spree_mug_back.jpeg?1405373465",
+                  "alt" : null,
+                  "attachment_height" : 240,
+                  "position" : 2,
+                  "attachment_width" : 240,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "spree_mug_back.jpeg",
+                  "small_url" : "/spree/products/46/small/spree_mug_back.jpeg?1405373465",
+                  "viewable_id" : 16,
+                  "id" : 46,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:31:05.091Z",
+                  "mini_url" : "/spree/products/46/mini/spree_mug_back.jpeg?1405373465",
+                  "product_url" : "/spree/products/46/product/spree_mug_back.jpeg?1405373465",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Spree Mug",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "11.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "13.99",
+            "options_text" : "",
+            "display_price" : "$13.99"
+         },
+         "name" : "Spree Mug",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            4,
+            10
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "13.99",
+         "display_price" : "$13.99"
+      },
+      {
+         "meta_keywords" : null,
+         "option_types" : [],
+         "shipping_category_id" : 1,
+         "slug" : "spree-ringer-t-shirt",
+         "id" : 10,
+         "total_on_hand" : 10,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : false,
+         "product_properties" : [
+            {
+               "property_name" : "Manufacturer",
+               "property_id" : 1,
+               "product_id" : 10,
+               "value" : "Jerseys",
+               "id" : 59
+            },
+            {
+               "property_name" : "Brand",
+               "property_id" : 2,
+               "product_id" : 10,
+               "value" : "Conditioned",
+               "id" : 60
+            },
+            {
+               "property_name" : "Model",
+               "property_id" : 3,
+               "product_id" : 10,
+               "value" : "TL9002",
+               "id" : 61
+            },
+            {
+               "property_name" : "Shirt Type",
+               "property_id" : 4,
+               "product_id" : 10,
+               "value" : "Ringer T",
+               "id" : 62
+            },
+            {
+               "property_name" : "Sleeve Type",
+               "property_id" : 5,
+               "product_id" : 10,
+               "value" : "Short",
+               "id" : 63
+            },
+            {
+               "property_name" : "Made from",
+               "property_id" : 6,
+               "product_id" : 10,
+               "value" : "100% Vellum",
+               "id" : 64
+            },
+            {
+               "property_name" : "Fit",
+               "property_id" : 7,
+               "product_id" : 10,
+               "value" : "Loose",
+               "id" : 65
+            },
+            {
+               "property_name" : "Gender",
+               "property_id" : 8,
+               "product_id" : 10,
+               "value" : "Men's",
+               "id" : 66
+            }
+         ],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "SPR-00015",
+            "option_values" : [],
+            "slug" : "spree-ringer-t-shirt",
+            "weight" : "0.0",
+            "id" : 10,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/38/large/spree_ringer_t.jpeg?1405373462",
+                  "alt" : null,
+                  "attachment_height" : 480,
+                  "position" : 1,
+                  "attachment_width" : 480,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "spree_ringer_t.jpeg",
+                  "small_url" : "/spree/products/38/small/spree_ringer_t.jpeg?1405373462",
+                  "viewable_id" : 10,
+                  "id" : 38,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:31:02.334Z",
+                  "mini_url" : "/spree/products/38/mini/spree_ringer_t.jpeg?1405373462",
+                  "product_url" : "/spree/products/38/product/spree_ringer_t.jpeg?1405373462",
+                  "viewable_type" : "Spree::Variant"
+               },
+               {
+                  "large_url" : "/spree/products/39/large/spree_ringer_t_back.jpeg?1405373462",
+                  "alt" : null,
+                  "attachment_height" : 480,
+                  "position" : 2,
+                  "attachment_width" : 480,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "spree_ringer_t_back.jpeg",
+                  "small_url" : "/spree/products/39/small/spree_ringer_t_back.jpeg?1405373462",
+                  "viewable_id" : 10,
+                  "id" : 39,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:31:02.678Z",
+                  "mini_url" : "/spree/products/39/mini/spree_ringer_t_back.jpeg?1405373462",
+                  "product_url" : "/spree/products/39/product/spree_ringer_t_back.jpeg?1405373462",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Spree Ringer T-Shirt",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "17.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "19.99",
+            "options_text" : "",
+            "display_price" : "$19.99"
+         },
+         "name" : "Spree Ringer T-Shirt",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            7,
+            10
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "19.99",
+         "display_price" : "$19.99"
+      },
+      {
+         "meta_keywords" : null,
+         "option_types" : [
+            {
+               "presentation" : "Size",
+               "position" : 1,
+               "name" : "tshirt-size",
+               "id" : 1
+            },
+            {
+               "presentation" : "Color",
+               "position" : 2,
+               "name" : "tshirt-color",
+               "id" : 2
+            }
+         ],
+         "shipping_category_id" : 1,
+         "slug" : "ruby-on-rails-baseball-jersey",
+         "id" : 3,
+         "total_on_hand" : 110,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : true,
+         "product_properties" : [
+            {
+               "property_name" : "Manufacturer",
+               "property_id" : 1,
+               "product_id" : 3,
+               "value" : "Wilson",
+               "id" : 1
+            },
+            {
+               "property_name" : "Brand",
+               "property_id" : 2,
+               "product_id" : 3,
+               "value" : "Wannabe Sports",
+               "id" : 2
+            },
+            {
+               "property_name" : "Model",
+               "property_id" : 3,
+               "product_id" : 3,
+               "value" : "JK1002",
+               "id" : 3
+            },
+            {
+               "property_name" : "Shirt Type",
+               "property_id" : 4,
+               "product_id" : 3,
+               "value" : "Baseball Jersey",
+               "id" : 4
+            },
+            {
+               "property_name" : "Sleeve Type",
+               "property_id" : 5,
+               "product_id" : 3,
+               "value" : "Long",
+               "id" : 5
+            },
+            {
+               "property_name" : "Made from",
+               "property_id" : 6,
+               "product_id" : 3,
+               "value" : "100% cotton",
+               "id" : 6
+            },
+            {
+               "property_name" : "Fit",
+               "property_id" : 7,
+               "product_id" : 3,
+               "value" : "Loose",
+               "id" : 7
+            },
+            {
+               "property_name" : "Gender",
+               "property_id" : 8,
+               "product_id" : 3,
+               "value" : "Men's",
+               "id" : 8
+            }
+         ],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "ROR-001",
+            "option_values" : [],
+            "slug" : "ruby-on-rails-baseball-jersey",
+            "weight" : "0.0",
+            "id" : 3,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/24/large/ror_baseball.jpeg?1405373457",
+                  "alt" : null,
+                  "attachment_height" : 360,
+                  "position" : 1,
+                  "attachment_width" : 360,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "ror_baseball.jpeg",
+                  "small_url" : "/spree/products/24/small/ror_baseball.jpeg?1405373457",
+                  "viewable_id" : 3,
+                  "id" : 24,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:30:57.282Z",
+                  "mini_url" : "/spree/products/24/mini/ror_baseball.jpeg?1405373457",
+                  "product_url" : "/spree/products/24/product/ror_baseball.jpeg?1405373457",
+                  "viewable_type" : "Spree::Variant"
+               },
+               {
+                  "large_url" : "/spree/products/25/large/ror_baseball_back.jpeg?1405373457",
+                  "alt" : null,
+                  "attachment_height" : 360,
+                  "position" : 2,
+                  "attachment_width" : 360,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "ror_baseball_back.jpeg",
+                  "small_url" : "/spree/products/25/small/ror_baseball_back.jpeg?1405373457",
+                  "viewable_id" : 3,
+                  "id" : 25,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:30:57.618Z",
+                  "mini_url" : "/spree/products/25/mini/ror_baseball_back.jpeg?1405373457",
+                  "product_url" : "/spree/products/25/product/ror_baseball_back.jpeg?1405373457",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Ruby on Rails Baseball Jersey",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "17.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "19.99",
+            "options_text" : "",
+            "display_price" : "$19.99"
+         },
+         "name" : "Ruby on Rails Baseball Jersey",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            7,
+            11
+         ],
+         "variants" : [
+            {
+               "width" : null,
+               "sku" : "ROR-00001",
+               "option_values" : [
+                  {
+                     "option_type_name" : "tshirt-size",
+                     "presentation" : "S",
+                     "option_type_presentation" : "Size",
+                     "name" : "Small",
+                     "option_type_id" : 1,
+                     "id" : 1
+                  },
+                  {
+                     "option_type_name" : "tshirt-color",
+                     "presentation" : "Red",
+                     "option_type_presentation" : "Color",
+                     "name" : "Red",
+                     "option_type_id" : 2,
+                     "id" : 5
+                  }
+               ],
+               "slug" : "ruby-on-rails-baseball-jersey",
+               "weight" : "0.0",
+               "id" : 17,
+               "images" : [
+                  {
+                     "large_url" : "/spree/products/1/large/ror_baseball_jersey_red.png?1405373449",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 1,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_red.png",
+                     "small_url" : "/spree/products/1/small/ror_baseball_jersey_red.png?1405373449",
+                     "viewable_id" : 17,
+                     "id" : 1,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:49.527Z",
+                     "mini_url" : "/spree/products/1/mini/ror_baseball_jersey_red.png?1405373449",
+                     "product_url" : "/spree/products/1/product/ror_baseball_jersey_red.png?1405373449",
+                     "viewable_type" : "Spree::Variant"
+                  },
+                  {
+                     "large_url" : "/spree/products/2/large/ror_baseball_jersey_back_red.png?1405373449",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 2,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_back_red.png",
+                     "small_url" : "/spree/products/2/small/ror_baseball_jersey_back_red.png?1405373449",
+                     "viewable_id" : 17,
+                     "id" : 2,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:49.849Z",
+                     "mini_url" : "/spree/products/2/mini/ror_baseball_jersey_back_red.png?1405373449",
+                     "product_url" : "/spree/products/2/product/ror_baseball_jersey_back_red.png?1405373449",
+                     "viewable_type" : "Spree::Variant"
+                  }
+               ],
+               "name" : "Ruby on Rails Baseball Jersey",
+               "is_master" : false,
+               "height" : null,
+               "depth" : null,
+               "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+               "cost_price" : "17.0",
+               "track_inventory" : true,
+               "in_stock" : false,
+               "price" : "19.99",
+               "options_text" : "Size: S, Color: Red",
+               "display_price" : "$19.99"
+            },
+            {
+               "width" : null,
+               "sku" : "ROR-00002",
+               "option_values" : [
+                  {
+                     "option_type_name" : "tshirt-size",
+                     "presentation" : "S",
+                     "option_type_presentation" : "Size",
+                     "name" : "Small",
+                     "option_type_id" : 1,
+                     "id" : 1
+                  },
+                  {
+                     "option_type_name" : "tshirt-color",
+                     "presentation" : "Blue",
+                     "option_type_presentation" : "Color",
+                     "name" : "Blue",
+                     "option_type_id" : 2,
+                     "id" : 7
+                  }
+               ],
+               "slug" : "ruby-on-rails-baseball-jersey",
+               "weight" : "0.0",
+               "id" : 18,
+               "images" : [
+                  {
+                     "large_url" : "/spree/products/3/large/ror_baseball_jersey_blue.png?1405373450",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 1,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_blue.png",
+                     "small_url" : "/spree/products/3/small/ror_baseball_jersey_blue.png?1405373450",
+                     "viewable_id" : 18,
+                     "id" : 3,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:50.170Z",
+                     "mini_url" : "/spree/products/3/mini/ror_baseball_jersey_blue.png?1405373450",
+                     "product_url" : "/spree/products/3/product/ror_baseball_jersey_blue.png?1405373450",
+                     "viewable_type" : "Spree::Variant"
+                  },
+                  {
+                     "large_url" : "/spree/products/4/large/ror_baseball_jersey_back_blue.png?1405373450",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 2,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_back_blue.png",
+                     "small_url" : "/spree/products/4/small/ror_baseball_jersey_back_blue.png?1405373450",
+                     "viewable_id" : 18,
+                     "id" : 4,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:50.487Z",
+                     "mini_url" : "/spree/products/4/mini/ror_baseball_jersey_back_blue.png?1405373450",
+                     "product_url" : "/spree/products/4/product/ror_baseball_jersey_back_blue.png?1405373450",
+                     "viewable_type" : "Spree::Variant"
+                  }
+               ],
+               "name" : "Ruby on Rails Baseball Jersey",
+               "is_master" : false,
+               "height" : null,
+               "depth" : null,
+               "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+               "cost_price" : "17.0",
+               "track_inventory" : true,
+               "in_stock" : false,
+               "price" : "19.99",
+               "options_text" : "Size: S, Color: Blue",
+               "display_price" : "$19.99"
+            },
+            {
+               "width" : null,
+               "sku" : "ROR-00003",
+               "option_values" : [
+                  {
+                     "option_type_name" : "tshirt-size",
+                     "presentation" : "S",
+                     "option_type_presentation" : "Size",
+                     "name" : "Small",
+                     "option_type_id" : 1,
+                     "id" : 1
+                  },
+                  {
+                     "option_type_name" : "tshirt-color",
+                     "presentation" : "Green",
+                     "option_type_presentation" : "Color",
+                     "name" : "Green",
+                     "option_type_id" : 2,
+                     "id" : 6
+                  }
+               ],
+               "slug" : "ruby-on-rails-baseball-jersey",
+               "weight" : "0.0",
+               "id" : 19,
+               "images" : [
+                  {
+                     "large_url" : "/spree/products/5/large/ror_baseball_jersey_green.png?1405373450",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 1,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_green.png",
+                     "small_url" : "/spree/products/5/small/ror_baseball_jersey_green.png?1405373450",
+                     "viewable_id" : 19,
+                     "id" : 5,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:50.835Z",
+                     "mini_url" : "/spree/products/5/mini/ror_baseball_jersey_green.png?1405373450",
+                     "product_url" : "/spree/products/5/product/ror_baseball_jersey_green.png?1405373450",
+                     "viewable_type" : "Spree::Variant"
+                  },
+                  {
+                     "large_url" : "/spree/products/6/large/ror_baseball_jersey_back_green.png?1405373451",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 2,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_back_green.png",
+                     "small_url" : "/spree/products/6/small/ror_baseball_jersey_back_green.png?1405373451",
+                     "viewable_id" : 19,
+                     "id" : 6,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:51.175Z",
+                     "mini_url" : "/spree/products/6/mini/ror_baseball_jersey_back_green.png?1405373451",
+                     "product_url" : "/spree/products/6/product/ror_baseball_jersey_back_green.png?1405373451",
+                     "viewable_type" : "Spree::Variant"
+                  }
+               ],
+               "name" : "Ruby on Rails Baseball Jersey",
+               "is_master" : false,
+               "height" : null,
+               "depth" : null,
+               "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+               "cost_price" : "17.0",
+               "track_inventory" : true,
+               "in_stock" : false,
+               "price" : "19.99",
+               "options_text" : "Size: S, Color: Green",
+               "display_price" : "$19.99"
+            },
+            {
+               "width" : null,
+               "sku" : "ROR-00004",
+               "option_values" : [
+                  {
+                     "option_type_name" : "tshirt-size",
+                     "presentation" : "M",
+                     "option_type_presentation" : "Size",
+                     "name" : "Medium",
+                     "option_type_id" : 1,
+                     "id" : 2
+                  },
+                  {
+                     "option_type_name" : "tshirt-color",
+                     "presentation" : "Red",
+                     "option_type_presentation" : "Color",
+                     "name" : "Red",
+                     "option_type_id" : 2,
+                     "id" : 5
+                  }
+               ],
+               "slug" : "ruby-on-rails-baseball-jersey",
+               "weight" : "0.0",
+               "id" : 20,
+               "images" : [
+                  {
+                     "large_url" : "/spree/products/7/large/ror_baseball_jersey_red.png?1405373451",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 1,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_red.png",
+                     "small_url" : "/spree/products/7/small/ror_baseball_jersey_red.png?1405373451",
+                     "viewable_id" : 20,
+                     "id" : 7,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:51.503Z",
+                     "mini_url" : "/spree/products/7/mini/ror_baseball_jersey_red.png?1405373451",
+                     "product_url" : "/spree/products/7/product/ror_baseball_jersey_red.png?1405373451",
+                     "viewable_type" : "Spree::Variant"
+                  },
+                  {
+                     "large_url" : "/spree/products/8/large/ror_baseball_jersey_back_red.png?1405373451",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 2,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_back_red.png",
+                     "small_url" : "/spree/products/8/small/ror_baseball_jersey_back_red.png?1405373451",
+                     "viewable_id" : 20,
+                     "id" : 8,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:51.830Z",
+                     "mini_url" : "/spree/products/8/mini/ror_baseball_jersey_back_red.png?1405373451",
+                     "product_url" : "/spree/products/8/product/ror_baseball_jersey_back_red.png?1405373451",
+                     "viewable_type" : "Spree::Variant"
+                  }
+               ],
+               "name" : "Ruby on Rails Baseball Jersey",
+               "is_master" : false,
+               "height" : null,
+               "depth" : null,
+               "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+               "cost_price" : "17.0",
+               "track_inventory" : true,
+               "in_stock" : false,
+               "price" : "19.99",
+               "options_text" : "Size: M, Color: Red",
+               "display_price" : "$19.99"
+            },
+            {
+               "width" : null,
+               "sku" : "ROR-00005",
+               "option_values" : [
+                  {
+                     "option_type_name" : "tshirt-size",
+                     "presentation" : "M",
+                     "option_type_presentation" : "Size",
+                     "name" : "Medium",
+                     "option_type_id" : 1,
+                     "id" : 2
+                  },
+                  {
+                     "option_type_name" : "tshirt-color",
+                     "presentation" : "Blue",
+                     "option_type_presentation" : "Color",
+                     "name" : "Blue",
+                     "option_type_id" : 2,
+                     "id" : 7
+                  }
+               ],
+               "slug" : "ruby-on-rails-baseball-jersey",
+               "weight" : "0.0",
+               "id" : 21,
+               "images" : [
+                  {
+                     "large_url" : "/spree/products/9/large/ror_baseball_jersey_blue.png?1405373452",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 1,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_blue.png",
+                     "small_url" : "/spree/products/9/small/ror_baseball_jersey_blue.png?1405373452",
+                     "viewable_id" : 21,
+                     "id" : 9,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:52.175Z",
+                     "mini_url" : "/spree/products/9/mini/ror_baseball_jersey_blue.png?1405373452",
+                     "product_url" : "/spree/products/9/product/ror_baseball_jersey_blue.png?1405373452",
+                     "viewable_type" : "Spree::Variant"
+                  },
+                  {
+                     "large_url" : "/spree/products/10/large/ror_baseball_jersey_back_blue.png?1405373452",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 2,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_back_blue.png",
+                     "small_url" : "/spree/products/10/small/ror_baseball_jersey_back_blue.png?1405373452",
+                     "viewable_id" : 21,
+                     "id" : 10,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:52.527Z",
+                     "mini_url" : "/spree/products/10/mini/ror_baseball_jersey_back_blue.png?1405373452",
+                     "product_url" : "/spree/products/10/product/ror_baseball_jersey_back_blue.png?1405373452",
+                     "viewable_type" : "Spree::Variant"
+                  }
+               ],
+               "name" : "Ruby on Rails Baseball Jersey",
+               "is_master" : false,
+               "height" : null,
+               "depth" : null,
+               "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+               "cost_price" : "17.0",
+               "track_inventory" : true,
+               "in_stock" : false,
+               "price" : "19.99",
+               "options_text" : "Size: M, Color: Blue",
+               "display_price" : "$19.99"
+            },
+            {
+               "width" : null,
+               "sku" : "ROR-00006",
+               "option_values" : [
+                  {
+                     "option_type_name" : "tshirt-size",
+                     "presentation" : "M",
+                     "option_type_presentation" : "Size",
+                     "name" : "Medium",
+                     "option_type_id" : 1,
+                     "id" : 2
+                  },
+                  {
+                     "option_type_name" : "tshirt-color",
+                     "presentation" : "Green",
+                     "option_type_presentation" : "Color",
+                     "name" : "Green",
+                     "option_type_id" : 2,
+                     "id" : 6
+                  }
+               ],
+               "slug" : "ruby-on-rails-baseball-jersey",
+               "weight" : "0.0",
+               "id" : 22,
+               "images" : [
+                  {
+                     "large_url" : "/spree/products/11/large/ror_baseball_jersey_green.png?1405373452",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 1,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_green.png",
+                     "small_url" : "/spree/products/11/small/ror_baseball_jersey_green.png?1405373452",
+                     "viewable_id" : 22,
+                     "id" : 11,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:52.858Z",
+                     "mini_url" : "/spree/products/11/mini/ror_baseball_jersey_green.png?1405373452",
+                     "product_url" : "/spree/products/11/product/ror_baseball_jersey_green.png?1405373452",
+                     "viewable_type" : "Spree::Variant"
+                  },
+                  {
+                     "large_url" : "/spree/products/12/large/ror_baseball_jersey_back_green.png?1405373453",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 2,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_back_green.png",
+                     "small_url" : "/spree/products/12/small/ror_baseball_jersey_back_green.png?1405373453",
+                     "viewable_id" : 22,
+                     "id" : 12,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:53.187Z",
+                     "mini_url" : "/spree/products/12/mini/ror_baseball_jersey_back_green.png?1405373453",
+                     "product_url" : "/spree/products/12/product/ror_baseball_jersey_back_green.png?1405373453",
+                     "viewable_type" : "Spree::Variant"
+                  }
+               ],
+               "name" : "Ruby on Rails Baseball Jersey",
+               "is_master" : false,
+               "height" : null,
+               "depth" : null,
+               "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+               "cost_price" : "17.0",
+               "track_inventory" : true,
+               "in_stock" : false,
+               "price" : "19.99",
+               "options_text" : "Size: M, Color: Green",
+               "display_price" : "$19.99"
+            },
+            {
+               "width" : null,
+               "sku" : "ROR-00007",
+               "option_values" : [
+                  {
+                     "option_type_name" : "tshirt-size",
+                     "presentation" : "L",
+                     "option_type_presentation" : "Size",
+                     "name" : "Large",
+                     "option_type_id" : 1,
+                     "id" : 3
+                  },
+                  {
+                     "option_type_name" : "tshirt-color",
+                     "presentation" : "Red",
+                     "option_type_presentation" : "Color",
+                     "name" : "Red",
+                     "option_type_id" : 2,
+                     "id" : 5
+                  }
+               ],
+               "slug" : "ruby-on-rails-baseball-jersey",
+               "weight" : "0.0",
+               "id" : 23,
+               "images" : [
+                  {
+                     "large_url" : "/spree/products/13/large/ror_baseball_jersey_red.png?1405373453",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 1,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_red.png",
+                     "small_url" : "/spree/products/13/small/ror_baseball_jersey_red.png?1405373453",
+                     "viewable_id" : 23,
+                     "id" : 13,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:53.533Z",
+                     "mini_url" : "/spree/products/13/mini/ror_baseball_jersey_red.png?1405373453",
+                     "product_url" : "/spree/products/13/product/ror_baseball_jersey_red.png?1405373453",
+                     "viewable_type" : "Spree::Variant"
+                  },
+                  {
+                     "large_url" : "/spree/products/14/large/ror_baseball_jersey_back_red.png?1405373453",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 2,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_back_red.png",
+                     "small_url" : "/spree/products/14/small/ror_baseball_jersey_back_red.png?1405373453",
+                     "viewable_id" : 23,
+                     "id" : 14,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:53.876Z",
+                     "mini_url" : "/spree/products/14/mini/ror_baseball_jersey_back_red.png?1405373453",
+                     "product_url" : "/spree/products/14/product/ror_baseball_jersey_back_red.png?1405373453",
+                     "viewable_type" : "Spree::Variant"
+                  }
+               ],
+               "name" : "Ruby on Rails Baseball Jersey",
+               "is_master" : false,
+               "height" : null,
+               "depth" : null,
+               "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+               "cost_price" : "17.0",
+               "track_inventory" : true,
+               "in_stock" : false,
+               "price" : "19.99",
+               "options_text" : "Size: L, Color: Red",
+               "display_price" : "$19.99"
+            },
+            {
+               "width" : null,
+               "sku" : "ROR-00008",
+               "option_values" : [
+                  {
+                     "option_type_name" : "tshirt-size",
+                     "presentation" : "L",
+                     "option_type_presentation" : "Size",
+                     "name" : "Large",
+                     "option_type_id" : 1,
+                     "id" : 3
+                  },
+                  {
+                     "option_type_name" : "tshirt-color",
+                     "presentation" : "Blue",
+                     "option_type_presentation" : "Color",
+                     "name" : "Blue",
+                     "option_type_id" : 2,
+                     "id" : 7
+                  }
+               ],
+               "slug" : "ruby-on-rails-baseball-jersey",
+               "weight" : "0.0",
+               "id" : 24,
+               "images" : [
+                  {
+                     "large_url" : "/spree/products/15/large/ror_baseball_jersey_blue.png?1405373454",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 1,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_blue.png",
+                     "small_url" : "/spree/products/15/small/ror_baseball_jersey_blue.png?1405373454",
+                     "viewable_id" : 24,
+                     "id" : 15,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:54.214Z",
+                     "mini_url" : "/spree/products/15/mini/ror_baseball_jersey_blue.png?1405373454",
+                     "product_url" : "/spree/products/15/product/ror_baseball_jersey_blue.png?1405373454",
+                     "viewable_type" : "Spree::Variant"
+                  },
+                  {
+                     "large_url" : "/spree/products/16/large/ror_baseball_jersey_back_blue.png?1405373454",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 2,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_back_blue.png",
+                     "small_url" : "/spree/products/16/small/ror_baseball_jersey_back_blue.png?1405373454",
+                     "viewable_id" : 24,
+                     "id" : 16,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:54.551Z",
+                     "mini_url" : "/spree/products/16/mini/ror_baseball_jersey_back_blue.png?1405373454",
+                     "product_url" : "/spree/products/16/product/ror_baseball_jersey_back_blue.png?1405373454",
+                     "viewable_type" : "Spree::Variant"
+                  }
+               ],
+               "name" : "Ruby on Rails Baseball Jersey",
+               "is_master" : false,
+               "height" : null,
+               "depth" : null,
+               "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+               "cost_price" : "17.0",
+               "track_inventory" : true,
+               "in_stock" : false,
+               "price" : "19.99",
+               "options_text" : "Size: L, Color: Blue",
+               "display_price" : "$19.99"
+            },
+            {
+               "width" : null,
+               "sku" : "ROR-00009",
+               "option_values" : [
+                  {
+                     "option_type_name" : "tshirt-size",
+                     "presentation" : "L",
+                     "option_type_presentation" : "Size",
+                     "name" : "Large",
+                     "option_type_id" : 1,
+                     "id" : 3
+                  },
+                  {
+                     "option_type_name" : "tshirt-color",
+                     "presentation" : "Green",
+                     "option_type_presentation" : "Color",
+                     "name" : "Green",
+                     "option_type_id" : 2,
+                     "id" : 6
+                  }
+               ],
+               "slug" : "ruby-on-rails-baseball-jersey",
+               "weight" : "0.0",
+               "id" : 25,
+               "images" : [
+                  {
+                     "large_url" : "/spree/products/17/large/ror_baseball_jersey_green.png?1405373454",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 1,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_green.png",
+                     "small_url" : "/spree/products/17/small/ror_baseball_jersey_green.png?1405373454",
+                     "viewable_id" : 25,
+                     "id" : 17,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:54.895Z",
+                     "mini_url" : "/spree/products/17/mini/ror_baseball_jersey_green.png?1405373454",
+                     "product_url" : "/spree/products/17/product/ror_baseball_jersey_green.png?1405373454",
+                     "viewable_type" : "Spree::Variant"
+                  },
+                  {
+                     "large_url" : "/spree/products/18/large/ror_baseball_jersey_back_green.png?1405373455",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 2,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_back_green.png",
+                     "small_url" : "/spree/products/18/small/ror_baseball_jersey_back_green.png?1405373455",
+                     "viewable_id" : 25,
+                     "id" : 18,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:55.239Z",
+                     "mini_url" : "/spree/products/18/mini/ror_baseball_jersey_back_green.png?1405373455",
+                     "product_url" : "/spree/products/18/product/ror_baseball_jersey_back_green.png?1405373455",
+                     "viewable_type" : "Spree::Variant"
+                  }
+               ],
+               "name" : "Ruby on Rails Baseball Jersey",
+               "is_master" : false,
+               "height" : null,
+               "depth" : null,
+               "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+               "cost_price" : "17.0",
+               "track_inventory" : true,
+               "in_stock" : false,
+               "price" : "19.99",
+               "options_text" : "Size: L, Color: Green",
+               "display_price" : "$19.99"
+            },
+            {
+               "width" : null,
+               "sku" : "ROR-00012",
+               "option_values" : [
+                  {
+                     "option_type_name" : "tshirt-size",
+                     "presentation" : "XL",
+                     "option_type_presentation" : "Size",
+                     "name" : "Extra Large",
+                     "option_type_id" : 1,
+                     "id" : 4
+                  },
+                  {
+                     "option_type_name" : "tshirt-color",
+                     "presentation" : "Green",
+                     "option_type_presentation" : "Color",
+                     "name" : "Green",
+                     "option_type_id" : 2,
+                     "id" : 6
+                  }
+               ],
+               "slug" : "ruby-on-rails-baseball-jersey",
+               "weight" : "0.0",
+               "id" : 26,
+               "images" : [
+                  {
+                     "large_url" : "/spree/products/19/large/ror_baseball_jersey_green.png?1405373455",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 1,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_green.png",
+                     "small_url" : "/spree/products/19/small/ror_baseball_jersey_green.png?1405373455",
+                     "viewable_id" : 26,
+                     "id" : 19,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:55.572Z",
+                     "mini_url" : "/spree/products/19/mini/ror_baseball_jersey_green.png?1405373455",
+                     "product_url" : "/spree/products/19/product/ror_baseball_jersey_green.png?1405373455",
+                     "viewable_type" : "Spree::Variant"
+                  },
+                  {
+                     "large_url" : "/spree/products/20/large/ror_baseball_jersey_back_green.png?1405373455",
+                     "alt" : null,
+                     "attachment_height" : 240,
+                     "position" : 2,
+                     "attachment_width" : 240,
+                     "attachment_content_type" : "image/png",
+                     "attachment_file_name" : "ror_baseball_jersey_back_green.png",
+                     "small_url" : "/spree/products/20/small/ror_baseball_jersey_back_green.png?1405373455",
+                     "viewable_id" : 26,
+                     "id" : 20,
+                     "type" : "Spree::Image",
+                     "attachment_updated_at" : "2014-07-14T21:30:55.904Z",
+                     "mini_url" : "/spree/products/20/mini/ror_baseball_jersey_back_green.png?1405373455",
+                     "product_url" : "/spree/products/20/product/ror_baseball_jersey_back_green.png?1405373455",
+                     "viewable_type" : "Spree::Variant"
+                  }
+               ],
+               "name" : "Ruby on Rails Baseball Jersey",
+               "is_master" : false,
+               "height" : null,
+               "depth" : null,
+               "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+               "cost_price" : "17.0",
+               "track_inventory" : true,
+               "in_stock" : false,
+               "price" : "19.99",
+               "options_text" : "Size: XL, Color: Green",
+               "display_price" : "$19.99"
+            }
+         ],
+         "highlight_order" : null,
+         "price" : "19.99",
+         "display_price" : "$19.99"
+      },
+      {
+         "meta_keywords" : null,
+         "option_types" : [],
+         "shipping_category_id" : 1,
+         "slug" : "ruby-on-rails-jr-spaghetti",
+         "id" : 4,
+         "total_on_hand" : 10,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : false,
+         "product_properties" : [
+            {
+               "property_name" : "Manufacturer",
+               "property_id" : 1,
+               "product_id" : 4,
+               "value" : "Jerseys",
+               "id" : 9
+            },
+            {
+               "property_name" : "Brand",
+               "property_id" : 2,
+               "product_id" : 4,
+               "value" : "Resiliance",
+               "id" : 10
+            },
+            {
+               "property_name" : "Model",
+               "property_id" : 3,
+               "product_id" : 4,
+               "value" : "TL174",
+               "id" : 11
+            },
+            {
+               "property_name" : "Shirt Type",
+               "property_id" : 4,
+               "product_id" : 4,
+               "value" : "Jr. Spaghetti T",
+               "id" : 12
+            },
+            {
+               "property_name" : "Sleeve Type",
+               "property_id" : 5,
+               "product_id" : 4,
+               "value" : "None",
+               "id" : 13
+            },
+            {
+               "property_name" : "Made from",
+               "property_id" : 6,
+               "product_id" : 4,
+               "value" : "90% Cotton, 10% Nylon",
+               "id" : 14
+            },
+            {
+               "property_name" : "Fit",
+               "property_id" : 7,
+               "product_id" : 4,
+               "value" : "Form",
+               "id" : 15
+            },
+            {
+               "property_name" : "Gender",
+               "property_id" : 8,
+               "product_id" : 4,
+               "value" : "Women's",
+               "id" : 16
+            }
+         ],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "ROR-00013",
+            "option_values" : [],
+            "slug" : "ruby-on-rails-jr-spaghetti",
+            "weight" : "0.0",
+            "id" : 4,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/26/large/ror_jr_spaghetti.jpeg?1405373457",
+                  "alt" : null,
+                  "attachment_height" : 360,
+                  "position" : 1,
+                  "attachment_width" : 360,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "ror_jr_spaghetti.jpeg",
+                  "small_url" : "/spree/products/26/small/ror_jr_spaghetti.jpeg?1405373457",
+                  "viewable_id" : 4,
+                  "id" : 26,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:30:57.945Z",
+                  "mini_url" : "/spree/products/26/mini/ror_jr_spaghetti.jpeg?1405373457",
+                  "product_url" : "/spree/products/26/product/ror_jr_spaghetti.jpeg?1405373457",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Ruby on Rails Jr. Spaghetti",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "17.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "19.99",
+            "options_text" : "",
+            "display_price" : "$19.99"
+         },
+         "name" : "Ruby on Rails Jr. Spaghetti",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            6,
+            11
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "19.99",
+         "display_price" : "$19.99"
+      },
+      {
+         "meta_keywords" : null,
+         "option_types" : [],
+         "shipping_category_id" : 1,
+         "slug" : "spree-bag",
+         "id" : 12,
+         "total_on_hand" : 10,
+         "available_on" : "2014-07-14T21:30:45.703Z",
+         "has_variants" : false,
+         "product_properties" : [
+            {
+               "property_name" : "Type",
+               "property_id" : 9,
+               "product_id" : 12,
+               "value" : "Messenger",
+               "id" : 41
+            },
+            {
+               "property_name" : "Size",
+               "property_id" : 10,
+               "product_id" : 12,
+               "value" : "14 1/2\" x 12\" x 5\"",
+               "id" : 42
+            }
+         ],
+         "meta_description" : null,
+         "master" : {
+            "width" : null,
+            "sku" : "SPR-00012",
+            "option_values" : [],
+            "slug" : "spree-bag",
+            "weight" : "0.0",
+            "id" : 12,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/35/large/spree_bag.jpeg?1405373461",
+                  "alt" : null,
+                  "attachment_height" : 480,
+                  "position" : 1,
+                  "attachment_width" : 480,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "spree_bag.jpeg",
+                  "small_url" : "/spree/products/35/small/spree_bag.jpeg?1405373461",
+                  "viewable_id" : 12,
+                  "id" : 35,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:31:01.199Z",
+                  "mini_url" : "/spree/products/35/mini/spree_bag.jpeg?1405373461",
+                  "product_url" : "/spree/products/35/product/spree_bag.jpeg?1405373461",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Spree Bag",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "21.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "22.99",
+            "options_text" : "",
+            "display_price" : "$22.99"
+         },
+         "name" : "Spree Bag",
+         "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+         "taxon_ids" : [
+            3,
+            10
+         ],
+         "variants" : [],
+         "highlight_order" : null,
+         "price" : "22.99",
+         "display_price" : "$22.99"
+      }
+   ],
+   "pages" : 1,
+   "total_count" : 16
+}

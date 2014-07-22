@@ -25,9 +25,130 @@ describe BlueApron::SpreeClient do
     expect(BlueApron::SpreeClient::VERSION).to_not be_nil
   end
 
+  after(:each) do
+    stubs.verify_stubbed_calls
+  end
+
+  shared_examples 'a Hashie::Mash' do
+    it 'should be a Hashie::Mash' do
+      expect(subject).to be_a(Hashie::Mash)
+    end
+  end
+
+  shared_examples "a paginated response" do
+    it 'should contain pagination' do
+      expect(subject[:count]).to be_a(Fixnum)
+      expect(subject.current_page).to be_a(Fixnum)
+      expect(subject.pages).to be_a(Fixnum)
+    end
+  end
+
   describe '#connection' do
     it 'should not be nil' do
       expect(spree_client.send(:connection)).to_not be_nil
+    end
+  end
+
+  describe '#add_line_item' do
+    let(:order_number) { 'R1234' }
+    let(:line_item) do
+      {
+        line_item: {
+          variant_id: 1,
+          quantity: 1
+        }
+      }
+    end
+
+    subject { spree_client.add_line_item(order_number, line_item) }
+
+    context 'when response is 201' do
+      before(:each) do
+        stubs.post("/api/orders/#{order_number}/line_items") do |env|
+          expect(env[:body]).to eq(line_item.to_json)
+          validate_json_request(env)
+          [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders_line_items.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+    end    
+  end
+
+  describe '#get_order' do
+    let(:order_number) { 'R1234' }
+    subject { spree_client.get_order(order_number) }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.get("/api/orders/#{order_number}") do |env|
+          validate_json_request(env)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+    end
+  end
+
+  describe '#get_product' do
+    let(:id) { 1 }
+    subject { spree_client.get_product(id) }
+    
+    context 'when response is 200' do
+      before(:each) do
+        stubs.get("/api/products/#{id}") do |env|
+          validate_json_request(env)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_product.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+    end
+  end
+
+  describe '#get_products' do
+    let(:params) { {} }
+
+    subject { spree_client.get_products(params) }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.get('/api/products') do |env|
+          validate_json_request(env)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_products.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash" 
+
+      it_behaves_like "a paginated response" 
+
+      it "should contain products" do
+        expect(subject.products).to be_a(Array)
+      end
+    end
+  end
+
+  describe '#get_taxons_by_slug' do
+    let(:permalink) { 'brand/ruby' }
+
+    before do
+      expect(spree_client).to receive(:get_taxonomies).and_return(Hashie::Mash.new(JSON.parse(read_fixture_file('get_api_taxonomies.json'))))
+    end
+
+    subject { spree_client.get_taxons_by_permalink(permalink) }
+
+    it 'should return a taxon' do
+      expect(subject.size).to eq(1)
+    end
+
+    it 'should return taxon 8' do
+      expect(subject.first.id).to eq(8)
     end
   end
 
@@ -52,36 +173,24 @@ describe BlueApron::SpreeClient do
     context 'when response is 200' do
       before(:each) do
         stubs.get('/api/taxonomies') do |env|
-          expect(env[:request_headers]['Content-Type']).to eq('application/json')
-          expect(env[:request_headers]['X-Spree-Token']).to eq(api_key)
-          [200, {'Content-Type' => 'text/html'}, read_fixture_file('get_api_taxonomies.json')]
+          validate_json_request(env)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_taxonomies.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it 'should not be a Hashie::Mash' do
-        expect(subject).to be_a(Hashie::Mash)
-      end
+      it_behaves_like "a Hashie::Mash"
 
-      it 'should contain pagination' do
-        expect(subject[:count]).to eq(2)          # Known issue with .count and count attribute conflicting.
-        expect(subject.current_page).to eq(1)
-        expect(subject.pages).to eq(1)
-        
-      end
+      it_behaves_like "a paginated response"
 
       it 'should contain taxonomies' do
-        expect(subject.taxonomies.size).to eq(2)
+        expect(subject.taxonomies).to be_a(Array) 
       end
 
       it 'should contain taxons in taxonomies' do
         taxonomies = subject.taxonomies
         expect(taxonomies.first.name).to eq("Brand")
         expect(taxonomies.first.root.taxons.first.name).to eq("Ruby")
-      end
-
-      after(:each) do
-        stubs.verify_stubbed_calls
       end
     end
   end
@@ -98,18 +207,15 @@ describe BlueApron::SpreeClient do
     before do
       stubs.post('/api/orders') do |env|
         expect(env[:body]).to eq(order.to_json)
-        expect(env[:request_headers]['Content-Type']).to eq('application/json')
-        expect(env[:request_headers]['X-Spree-Token']).to eq(api_key)
-        [201, {'Content-Type' => 'text/html'}, read_fixture_file('post_api_orders.json')] 
+        validate_json_request(env)
+        [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders.json')] 
       end
       expect(spree_client).to receive(:connection).and_return(connection)
     end
 
-    subject { spree_client.create_order(order) }
+    subject { spree_client.create_order(order: order) }
 
-    it 'should not be a Hashie::Mash' do
-      expect(subject).to be_a(Hashie::Mash)
-    end
+    it_behaves_like "a Hashie::Mash"
 
     it 'should have an id' do
       expect(subject.id).to eq(30)
@@ -117,10 +223,6 @@ describe BlueApron::SpreeClient do
 
     it 'should have checkout steps' do
       expect(subject.checkout_steps).to eq(["address", "delivery", "complete"])
-    end
-
-    after(:each) do
-      stubs.verify_stubbed_calls
     end
   end
 
@@ -134,6 +236,11 @@ describe BlueApron::SpreeClient do
         end
       end
       expect(spree_client).to receive(:connection).and_return(connection)
+    end
+
+    def validate_json_request(env) 
+      expect(env[:request_headers]['Content-Type']).to eq('application/json')
+      expect(env[:request_headers]['X-Spree-Token']).to eq(api_key)
     end
 
     def read_fixture_file(file_name)

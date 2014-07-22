@@ -1,0 +1,323 @@
+{
+   "payments" : [
+      {
+         "source" : {
+            "last_digits" : null,
+            "month" : "1",
+            "name" : null,
+            "id" : 26,
+            "cc_type" : "visa",
+            "year" : "2017"
+         },
+         "source_id" : 26,
+         "display_amount" : "$38.58",
+         "response_code" : "ch_4QCcY6e9CDnyh1",
+         "avs_response" : null,
+         "state" : "completed",
+         "payment_method_id" : 6,
+         "payment_method" : {
+            "environment" : "development",
+            "name" : "Stripe Development",
+            "id" : 6
+         },
+         "created_at" : "2014-07-17T21:15:06.837Z",
+         "amount" : "38.58",
+         "updated_at" : "2014-07-17T21:15:12.008Z",
+         "source_type" : "Spree::CreditCard",
+         "id" : 55
+      }
+   ],
+   "line_items" : [
+      {
+         "adjustments" : [
+            {
+               "source_id" : 1,
+               "display_amount" : "$1.60",
+               "eligible" : true,
+               "adjustable_type" : "Spree::LineItem",
+               "created_at" : "2014-07-17T20:28:04.966Z",
+               "amount" : "1.6",
+               "updated_at" : "2014-07-17T20:29:41.247Z",
+               "source_type" : "Spree::TaxRate",
+               "adjustable_id" : 19,
+               "id" : 50,
+               "label" : "North America 5.0%",
+               "mandatory" : null
+            }
+         ],
+         "display_amount" : "$31.98",
+         "quantity" : 2,
+         "total" : "33.58",
+         "single_display_amount" : "$15.99",
+         "variant" : {
+            "width" : null,
+            "sku" : "ROR-00011",
+            "option_values" : [],
+            "product_id" : 1,
+            "slug" : "ruby-on-rails-tote",
+            "weight" : "0.0",
+            "id" : 1,
+            "images" : [
+               {
+                  "large_url" : "/spree/products/21/large/ror_tote.jpeg?1405373456",
+                  "alt" : null,
+                  "attachment_height" : 360,
+                  "position" : 1,
+                  "attachment_width" : 360,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "ror_tote.jpeg",
+                  "small_url" : "/spree/products/21/small/ror_tote.jpeg?1405373456",
+                  "viewable_id" : 1,
+                  "id" : 21,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:30:56.226Z",
+                  "mini_url" : "/spree/products/21/mini/ror_tote.jpeg?1405373456",
+                  "product_url" : "/spree/products/21/product/ror_tote.jpeg?1405373456",
+                  "viewable_type" : "Spree::Variant"
+               },
+               {
+                  "large_url" : "/spree/products/22/large/ror_tote_back.jpeg?1405373456",
+                  "alt" : null,
+                  "attachment_height" : 360,
+                  "position" : 2,
+                  "attachment_width" : 360,
+                  "attachment_content_type" : "image/jpeg",
+                  "attachment_file_name" : "ror_tote_back.jpeg",
+                  "small_url" : "/spree/products/22/small/ror_tote_back.jpeg?1405373456",
+                  "viewable_id" : 1,
+                  "id" : 22,
+                  "type" : "Spree::Image",
+                  "attachment_updated_at" : "2014-07-14T21:30:56.572Z",
+                  "mini_url" : "/spree/products/22/mini/ror_tote_back.jpeg?1405373456",
+                  "product_url" : "/spree/products/22/product/ror_tote_back.jpeg?1405373456",
+                  "viewable_type" : "Spree::Variant"
+               }
+            ],
+            "name" : "Ruby on Rails Tote",
+            "is_master" : true,
+            "height" : null,
+            "depth" : null,
+            "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+            "cost_price" : "17.0",
+            "track_inventory" : true,
+            "in_stock" : false,
+            "price" : "15.99",
+            "options_text" : "",
+            "display_price" : "$15.99"
+         },
+         "variant_id" : 1,
+         "id" : 19,
+         "price" : "15.99"
+      }
+   ],
+   "permissions" : {
+      "can_update" : true
+   },
+   "display_additional_tax_total" : "$1.60",
+   "state" : "complete",
+   "checkout_steps" : [
+      "address",
+      "delivery",
+      "payment",
+      "confirm",
+      "complete"
+   ],
+   "email" : "cs@cs.com",
+   "display_ship_total" : "$5.00",
+   "display_tax_total" : "$1.60",
+   "id" : 26,
+   "adjustment_total" : "1.6",
+   "special_instructions" : null,
+   "tax_total" : "1.6",
+   "ship_address" : {
+      "firstname" : "Chris",
+      "alternative_phone" : null,
+      "state_name" : null,
+      "state_id" : 48,
+      "lastname" : "Sun",
+      "state" : {
+         "abbr" : "NY",
+         "country_id" : 49,
+         "name" : "New York",
+         "id" : 48
+      },
+      "city" : "New York",
+      "country_id" : 49,
+      "id" : 58,
+      "company" : null,
+      "country" : {
+         "iso3" : "USA",
+         "iso" : "US",
+         "name" : "United States",
+         "iso_name" : "UNITED STATES",
+         "id" : 49,
+         "numcode" : 840
+      },
+      "full_name" : "Chris Sun",
+      "zipcode" : "10023",
+      "phone" : "9176130508",
+      "address2" : null,
+      "state_text" : "NY",
+      "address1" : "5 Crosby Street"
+   },
+   "display_included_tax_total" : "$0.00",
+   "total" : "38.58",
+   "updated_at" : "2014-07-22T17:57:48.596Z",
+   "user_id" : 1,
+   "item_total" : "31.98",
+   "payment_state" : "paid",
+   "number" : "R185531735",
+   "shipment_state" : "ready",
+   "channel" : "spree",
+   "currency" : "USD",
+   "bill_address" : {
+      "firstname" : "Chris",
+      "alternative_phone" : null,
+      "state_name" : null,
+      "state_id" : 48,
+      "lastname" : "Sun",
+      "state" : {
+         "abbr" : "NY",
+         "country_id" : 49,
+         "name" : "New York",
+         "id" : 48
+      },
+      "city" : "New York",
+      "country_id" : 49,
+      "id" : 57,
+      "company" : null,
+      "country" : {
+         "iso3" : "USA",
+         "iso" : "US",
+         "name" : "United States",
+         "iso_name" : "UNITED STATES",
+         "id" : 49,
+         "numcode" : 840
+      },
+      "full_name" : "Chris Sun",
+      "zipcode" : "10023",
+      "phone" : "9176130508",
+      "address2" : null,
+      "state_text" : "NY",
+      "address1" : "5 Crosby Street"
+   },
+   "created_at" : "2014-07-17T20:26:40.438Z",
+   "shipments" : [
+      {
+         "shipping_methods" : [
+            {
+               "shipping_categories" : [
+                  {
+                     "name" : "Default",
+                     "id" : 1
+                  }
+               ],
+               "name" : "UPS Ground (USD)",
+               "id" : 1,
+               "zones" : [
+                  {
+                     "name" : "North America",
+                     "id" : 2,
+                     "description" : "USA + Canada"
+                  }
+               ]
+            },
+            {
+               "shipping_categories" : [
+                  {
+                     "name" : "Default",
+                     "id" : 1
+                  }
+               ],
+               "name" : "UPS Two Day (USD)",
+               "id" : 2,
+               "zones" : [
+                  {
+                     "name" : "North America",
+                     "id" : 2,
+                     "description" : "USA + Canada"
+                  }
+               ]
+            },
+            {
+               "shipping_categories" : [
+                  {
+                     "name" : "Default",
+                     "id" : 1
+                  }
+               ],
+               "name" : "UPS One Day (USD)",
+               "id" : 3,
+               "zones" : [
+                  {
+                     "name" : "North America",
+                     "id" : 2,
+                     "description" : "USA + Canada"
+                  }
+               ]
+            }
+         ],
+         "cost" : "5.0",
+         "number" : "H73287256072",
+         "order_id" : "R185531735",
+         "selected_shipping_rate" : {
+            "cost" : "5.0",
+            "display_cost" : "$5.00",
+            "name" : "UPS Ground (USD)",
+            "id" : 166,
+            "shipping_method_id" : 1,
+            "selected" : true
+         },
+         "state" : "ready",
+         "shipped_at" : null,
+         "manifest" : [
+            {
+               "variant_id" : 1,
+               "states" : {
+                  "on_hand" : 2
+               },
+               "quantity" : 2
+            }
+         ],
+         "stock_location_name" : "default",
+         "id" : 49,
+         "shipping_rates" : [
+            {
+               "cost" : "5.0",
+               "display_cost" : "$5.00",
+               "name" : "UPS Ground (USD)",
+               "id" : 166,
+               "shipping_method_id" : 1,
+               "selected" : true
+            },
+            {
+               "cost" : "10.0",
+               "display_cost" : "$10.00",
+               "name" : "UPS Two Day (USD)",
+               "id" : 167,
+               "shipping_method_id" : 2,
+               "selected" : false
+            },
+            {
+               "cost" : "15.0",
+               "display_cost" : "$15.00",
+               "name" : "UPS One Day (USD)",
+               "id" : 168,
+               "shipping_method_id" : 3,
+               "selected" : false
+            }
+         ],
+         "tracking" : null
+      }
+   ],
+   "token" : "rKPMgbEp4uoM-0GJnqvT8g",
+   "total_quantity" : 2,
+   "display_total" : "$38.58",
+   "adjustments" : [],
+   "payment_total" : "38.58",
+   "ship_total" : "5.0",
+   "included_tax_total" : "0.0",
+   "additional_tax_total" : "1.6",
+   "completed_at" : "2014-07-17T21:15:12.092Z",
+   "display_item_total" : "$31.98"
+}

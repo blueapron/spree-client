@@ -1,0 +1,99 @@
+{
+   "meta_keywords" : null,
+   "option_types" : [],
+   "shipping_category_id" : 1,
+   "slug" : "ruby-on-rails-tote",
+   "id" : 1,
+   "total_on_hand" : 81,
+   "available_on" : "2014-07-14T21:30:45.703Z",
+   "has_variants" : false,
+   "product_properties" : [
+      {
+         "property_name" : "Type",
+         "property_id" : 9,
+         "product_id" : 1,
+         "value" : "Tote",
+         "id" : 25
+      },
+      {
+         "property_name" : "Size",
+         "property_id" : 10,
+         "product_id" : 1,
+         "value" : "15\" x 18\" x 6\"",
+         "id" : 26
+      },
+      {
+         "property_name" : "Material",
+         "property_id" : 11,
+         "product_id" : 1,
+         "value" : "Canvas",
+         "id" : 27
+      }
+   ],
+   "meta_description" : null,
+   "master" : {
+      "width" : null,
+      "sku" : "ROR-00011",
+      "option_values" : [],
+      "slug" : "ruby-on-rails-tote",
+      "weight" : "0.0",
+      "id" : 1,
+      "images" : [
+         {
+            "large_url" : "/spree/products/21/large/ror_tote.jpeg?1405373456",
+            "alt" : null,
+            "attachment_height" : 360,
+            "position" : 1,
+            "attachment_width" : 360,
+            "attachment_content_type" : "image/jpeg",
+            "attachment_file_name" : "ror_tote.jpeg",
+            "small_url" : "/spree/products/21/small/ror_tote.jpeg?1405373456",
+            "viewable_id" : 1,
+            "id" : 21,
+            "type" : "Spree::Image",
+            "attachment_updated_at" : "2014-07-14T21:30:56.226Z",
+            "mini_url" : "/spree/products/21/mini/ror_tote.jpeg?1405373456",
+            "product_url" : "/spree/products/21/product/ror_tote.jpeg?1405373456",
+            "viewable_type" : "Spree::Variant"
+         },
+         {
+            "large_url" : "/spree/products/22/large/ror_tote_back.jpeg?1405373456",
+            "alt" : null,
+            "attachment_height" : 360,
+            "position" : 2,
+            "attachment_width" : 360,
+            "attachment_content_type" : "image/jpeg",
+            "attachment_file_name" : "ror_tote_back.jpeg",
+            "small_url" : "/spree/products/22/small/ror_tote_back.jpeg?1405373456",
+            "viewable_id" : 1,
+            "id" : 22,
+            "type" : "Spree::Image",
+            "attachment_updated_at" : "2014-07-14T21:30:56.572Z",
+            "mini_url" : "/spree/products/22/mini/ror_tote_back.jpeg?1405373456",
+            "product_url" : "/spree/products/22/product/ror_tote_back.jpeg?1405373456",
+            "viewable_type" : "Spree::Variant"
+         }
+      ],
+      "name" : "Ruby on Rails Tote",
+      "is_master" : true,
+      "height" : null,
+      "depth" : null,
+      "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+      "cost_price" : "17.0",
+      "track_inventory" : true,
+      "in_stock" : false,
+      "price" : "15.99",
+      "options_text" : "",
+      "display_price" : "$15.99"
+   },
+   "name" : "Ruby on Rails Tote",
+   "description" : "Sed illum reprehenderit odio impedit id. Incidunt mollitia quis odio ad voluptate. Nemo nihil rerum dolor sapiente assumenda officiis. Quas velit quisquam ipsam est.",
+   "taxon_ids" : [
+      3,
+      11
+   ],
+   "variants" : [],
+   "highlight_order" : null,
+   "price" : "15.99",
+   "display_price" : "$15.99"
+}
