@@ -19,6 +19,24 @@ module BlueApron
       handle_response(response, 201)
     end
 
+    def update_line_item(order_id, line_item_id, quantity, options = {})
+      response = connection.put do |request|
+        request.url "/api/orders/#{order_id}/line_items/#{line_item_id}"
+        request.body = {line_item: {quantity: quantity}}.to_json
+        setup_authenticated_json_request(request, options)
+      end
+
+      handle_response(response, 200)
+    end
+
+    def delete_line_item(order_id, line_item_id, options = {})
+      response = connection.delete do |request|
+        request.url "/api/orders/#{order_id}/line_items/#{line_item_id}"
+        setup_authenticated_json_request(request, options)
+      end
+      handle_response(response, 204)
+    end
+
     def get_order(id, options = {})
       response = connection.get do |request|
         request.url "/api/orders/#{id}"
@@ -105,8 +123,10 @@ module BlueApron
       end
 
       def handle_response(response, expected_status)
-        if response.status != expected_status
-          raise ApiError.new(response.status, response.body) 
+        raise ApiError.new(response.status, response.body) if response.status != expected_status
+
+        if response.status == 204
+          nil 
         else
           Hashie::Mash.new JSON.parse(response.body)
         end

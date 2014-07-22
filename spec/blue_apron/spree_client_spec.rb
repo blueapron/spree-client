@@ -76,6 +76,48 @@ describe BlueApron::SpreeClient do
     end    
   end
 
+  describe '#update_line_item' do
+    let(:order_number) { 'R1234' }
+    let(:line_item_id) { 1 }
+    let(:quantity) { 99 }
+
+    subject { spree_client.update_line_item(order_number, line_item_id, quantity) }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.put("/api/orders/#{order_number}/line_items/#{line_item_id}") do |env|
+          expect(env[:body]).to eq({line_item: {quantity: quantity}}.to_json)
+          validate_json_request(env)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('put_api_orders_line_items.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+    end
+  end
+
+  describe '#delete_line_item' do
+    let(:order_number) { 'R1234' }
+    let(:line_item_id) { 1 }
+
+    subject { spree_client.delete_line_item(order_number, line_item_id) }
+
+    context 'when response is 204' do
+      before(:each) do
+        stubs.delete("/api/orders/#{order_number}/line_items/#{line_item_id}") do |env|
+          validate_json_request(env)
+          [204, {'Content-Type' => 'application/json'}, ""]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it 'should return nil' do
+        expect(subject).to be_nil
+      end
+    end
+  end
+
   describe '#get_order' do
     let(:order_number) { 'R1234' }
     subject { spree_client.get_order(order_number) }
