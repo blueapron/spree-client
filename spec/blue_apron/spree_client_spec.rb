@@ -31,6 +31,61 @@ describe BlueApron::SpreeClient do
     end
   end
 
+  describe '#get_taxononies' do
+    subject { spree_client.get_taxonomies }
+
+    context 'when response is not 200' do
+      before(:each) do
+        stubs.get('/api/taxonomies') do |env|
+          [500, {}, "ERROR"]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it 'should raise error' do
+        expect {
+          subject
+        }.to raise_error(BlueApron::SpreeClient::ApiError)
+      end
+    end
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.get('/api/taxonomies') do |env|
+          expect(env[:request_headers]['Content-Type']).to eq('application/json')
+          expect(env[:request_headers]['X-Spree-Token']).to eq(api_key)
+          [200, {'Content-Type' => 'text/html'}, read_fixture_file('get_api_taxonomies.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it 'should not be a Hashie::Mash' do
+        expect(subject).to be_a(Hashie::Mash)
+      end
+
+      it 'should contain pagination' do
+        expect(subject[:count]).to eq(2)          # Known issue with .count and count attribute conflicting.
+        expect(subject.current_page).to eq(1)
+        expect(subject.pages).to eq(1)
+        
+      end
+
+      it 'should contain taxonomies' do
+        expect(subject.taxonomies.size).to eq(2)
+      end
+
+      it 'should contain taxons in taxonomies' do
+        taxonomies = subject.taxonomies
+        expect(taxonomies.first.name).to eq("Brand")
+        expect(taxonomies.first.root.taxons.first.name).to eq("Ruby")
+      end
+
+      after(:each) do
+        stubs.verify_stubbed_calls
+      end
+    end
+  end
+
   describe '#create_order' do
     let(:order) do
       { 
@@ -52,8 +107,8 @@ describe BlueApron::SpreeClient do
 
     subject { spree_client.create_order(order) }
 
-    it 'should not be nil' do
-      expect(subject).to_not be_nil
+    it 'should not be a Hashie::Mash' do
+      expect(subject).to be_a(Hashie::Mash)
     end
 
     it 'should have an id' do
@@ -64,7 +119,7 @@ describe BlueApron::SpreeClient do
       expect(subject.checkout_steps).to eq(["address", "delivery", "complete"])
     end
 
-    after do
+    after(:each) do
       stubs.verify_stubbed_calls
     end
   end
