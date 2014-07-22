@@ -1,5 +1,8 @@
 require_relative '../blue_apron'
+
 require 'faraday'
+require 'json'
+require 'hashie'
 
 module BlueApron
   class SpreeClient
@@ -7,10 +10,26 @@ module BlueApron
     attr_accessor :url
 
     def create_order(order, options = {})
-      connection.post do |request|
+      response = connection.post do |request|
         request.url "/api/orders"        
         request.headers['X-Spree-Token'] = @api_key
-        request.body = order
+        request.headers['Content-Type'] = 'application/json'
+        request.body = order.to_json
+      end
+
+      if response.status != 201
+        raise ApiError.new(response.status, response.body) 
+      end
+      Hashie::Mash.new JSON.parse(response.body)
+    end
+
+    class ApiError < StandardError
+      attr_reader :status
+      attr_reader :body
+
+      def initialize(status, body)
+        @status = status
+        @body = body
       end
     end
 
