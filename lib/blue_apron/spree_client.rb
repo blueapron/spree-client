@@ -16,7 +16,7 @@ module BlueApron
         setup_authenticated_json_request(request, options)
       end 
 
-      handle_response(response, 201)
+      handle_response(response)
     end
 
     def update_line_item(order_id, line_item_id, quantity, options = {})
@@ -26,7 +26,7 @@ module BlueApron
         setup_authenticated_json_request(request, options)
       end
 
-      handle_response(response, 200)
+      handle_response(response)
     end
 
     def delete_line_item(order_id, line_item_id, options = {})
@@ -34,7 +34,26 @@ module BlueApron
         request.url "/api/orders/#{order_id}/line_items/#{line_item_id}"
         setup_authenticated_json_request(request, options)
       end
-      handle_response(response, 204)
+      handle_response(response)
+    end
+
+    def update_order(id, order, options = {})
+      response = connection.put do |request|
+        request.url "/api/orders/#{id}"
+        request.body = order.to_json
+        setup_authenticated_json_request(request, options)
+      end
+
+      handle_response(response)
+    end
+
+    def empty_order(id, options = {}) 
+      response = connection.put do |request|
+        request.url "/api/orders/#{id}/empty"
+        setup_authenticated_json_request(request, options)
+      end
+
+      handle_response(response)
     end
 
     def get_order(id, options = {})
@@ -43,7 +62,7 @@ module BlueApron
         setup_authenticated_json_request(request, options)
       end
 
-      handle_response(response, 200)
+      handle_response(response)
     end
 
     def get_product(id)
@@ -52,7 +71,7 @@ module BlueApron
         setup_authenticated_json_request(request)
       end
 
-      handle_response(response, 200)
+      handle_response(response)
     end
 
     def get_products(options = {})
@@ -62,7 +81,7 @@ module BlueApron
         setup_authenticated_json_request(request)
       end
  
-      handle_response(response, 200)
+      handle_response(response)
     end
 
     ##
@@ -84,7 +103,7 @@ module BlueApron
         setup_authenticated_json_request(request)
       end
 
-      handle_response(response, 200)
+      handle_response(response)
     end
 
     ##
@@ -97,7 +116,7 @@ module BlueApron
         setup_authenticated_json_request(request)
       end
 
-      handle_response(response, 201)
+      handle_response(response)
     end
 
     class ApiError < StandardError
@@ -122,13 +141,15 @@ module BlueApron
         request.headers['Accept'] = 'application/json'
       end
 
-      def handle_response(response, expected_status)
-        raise ApiError.new(response.status, response.body) if response.status != expected_status
+      def handle_response(response)
+        raise ApiError.new(response.status, response.body) unless [200, 201, 204].include?(response.status)
 
         if response.status == 204
-          nil 
-        else
+          true
+        elsif response.body && !response.body.empty?
           Hashie::Mash.new JSON.parse(response.body)
+        else
+          true 
         end
       end
       

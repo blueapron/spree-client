@@ -43,6 +43,20 @@ describe BlueApron::SpreeClient do
     end
   end
 
+  shared_examples "a order" do
+    it 'should have checkout steps' do
+      expect(subject.checkout_steps.size).to_not eq(0)
+    end
+
+    it 'should have a number' do
+      expect(subject.number).to match(/^R/)
+    end
+
+    it 'should have a order token' do
+      expect(subject.token).to_not be_nil
+    end
+  end
+
   describe '#connection' do
     it 'should not be nil' do
       expect(spree_client.send(:connection)).to_not be_nil
@@ -112,8 +126,8 @@ describe BlueApron::SpreeClient do
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it 'should return nil' do
-        expect(subject).to be_nil
+      it 'should return true' do
+        expect(subject).to be_truthy
       end
     end
   end
@@ -132,6 +146,52 @@ describe BlueApron::SpreeClient do
       end
 
       it_behaves_like "a Hashie::Mash"
+    end
+  end
+
+  describe '#update_order' do
+    let(:order_number) { 'R1234' }
+    let(:order) do
+      {
+        order: {
+          email: 'cs@cs.com'
+        }
+      }
+    end
+
+    subject { spree_client.update_order(order_number, order) }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.put("/api/orders/#{order_number}") do |env|
+          validate_json_request(env)
+          expect(env[:body]).to eq(order.to_json)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+      it_behaves_like "a order"
+    end
+  end
+
+  describe '#empty_order' do
+    let(:id) { 'R1234' }
+    subject { spree_client.empty_order(id) }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.put("/api/orders/#{id}/empty") do |env|
+          validate_json_request(env)
+          [200, {'Content-Type' => 'application/json'}, ""]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it 'should return true' do
+        expect(subject).to be_truthy
+      end
     end
   end
 
@@ -258,13 +318,10 @@ describe BlueApron::SpreeClient do
     subject { spree_client.create_order(order: order) }
 
     it_behaves_like "a Hashie::Mash"
+    it_behaves_like "a order"
 
     it 'should have an id' do
       expect(subject.id).to eq(30)
-    end
-
-    it 'should have checkout steps' do
-      expect(subject.checkout_steps).to eq(["address", "delivery", "complete"])
     end
   end
 
