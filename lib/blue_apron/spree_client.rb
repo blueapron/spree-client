@@ -9,6 +9,11 @@ module BlueApron
     attr_accessor :api_key
     attr_accessor :url
 
+    def initialize(options = {})
+      @api_key = options[:api_key]
+      @url = options[:url]
+    end
+
     def next(order_id)
       response = connection.put do |request|
         request.url "/api/checkouts/#{order_id}/next"

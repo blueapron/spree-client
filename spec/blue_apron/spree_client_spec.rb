@@ -57,6 +57,18 @@ describe BlueApron::SpreeClient do
     end
   end
 
+  describe '.initialize' do
+    subject { BlueApron::SpreeClient.new(api_key: 'foo', url: 'bar') }
+
+    it 'should have api_key' do
+      expect(subject.api_key).to eq('foo')
+    end
+
+    it 'should have url' do
+      expect(subject.url).to eq('bar')
+    end
+  end
+
   describe '#connection' do
     it 'should not be nil' do
       expect(spree_client.send(:connection)).to_not be_nil
