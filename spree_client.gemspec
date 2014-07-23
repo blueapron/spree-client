@@ -4,10 +4,10 @@ $:.unshift lib unless $:.include?(lib)
 require 'blue_apron/spree_client/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'Blue Apron Spree Client'
+  s.name        = 'spree_client'
   s.version     = BlueApron::SpreeClient::VERSION
   s.licenses    = ['MIT']
-  s.summary     = "A simple ruby client to interact with the Spree API."
+  s.summary     = "Blue Apron Ruby Spree Client"
   s.description = "A simple ruby client to interact with the Spree API."
   s.authors     = ["Blue Apron Engineering"]
   s.email       = 'engineering@blueapron.com'
