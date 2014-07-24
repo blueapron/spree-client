@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spree_client (1.0.0.pre)
+    spree_client (1.0.2.pre)
       faraday
       hashie
       json
