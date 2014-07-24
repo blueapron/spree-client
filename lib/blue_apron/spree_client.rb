@@ -131,8 +131,12 @@ module BlueApron
     # Create a Spree::Order.
     def create_order(options = {})
       response = connection.post do |request|
-        request.url "/api/orders"        
-        request.body = options[:order].to_json if options[:order]
+        request.url "/api/orders"
+        if options[:order]
+          request.body = options[:order].to_json if options[:order]
+        else
+          request.body = {order: {}}.to_json
+        end
         request.params = options[:params] if options[:params]
         setup_authenticated_json_request(request)
       end

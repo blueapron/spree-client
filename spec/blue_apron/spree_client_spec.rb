@@ -339,22 +339,44 @@ describe BlueApron::SpreeClient do
       }
     end
 
-    before do
-      stubs.post('/api/orders') do |env|
-        expect(env[:body]).to eq(order.to_json)
-        validate_json_request(env)
-        [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders.json')] 
+    context 'when order params not provided' do
+      before do
+        stubs.post('/api/orders') do |env|
+          expect(env[:body]).to eq({order: {}}.to_json)
+          validate_json_request(env)
+          [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders.json')] 
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
       end
-      expect(spree_client).to receive(:connection).and_return(connection)
+
+      subject { spree_client.create_order }
+
+      it_behaves_like "a Hashie::Mash"
+      it_behaves_like "an order"
+
+      it 'should have an id' do
+        expect(subject.id).to eq(30)
+      end 
     end
 
-    subject { spree_client.create_order(order: order) }
+    context 'when order params provided' do
+      before do
+        stubs.post('/api/orders') do |env|
+          expect(env[:body]).to eq(order.to_json)
+          validate_json_request(env)
+          [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders.json')] 
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
 
-    it_behaves_like "a Hashie::Mash"
-    it_behaves_like "an order"
+      subject { spree_client.create_order(order: order) }
 
-    it 'should have an id' do
-      expect(subject.id).to eq(30)
+      it_behaves_like "a Hashie::Mash"
+      it_behaves_like "an order"
+
+      it 'should have an id' do
+        expect(subject.id).to eq(30)
+      end
     end
   end
 
