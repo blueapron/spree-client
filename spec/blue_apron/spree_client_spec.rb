@@ -342,8 +342,9 @@ describe BlueApron::SpreeClient do
     context 'when order params not provided' do
       before do
         stubs.post('/api/orders') do |env|
-          expect(env[:body]).to eq({order: {}}.to_json)
-          validate_json_request(env)
+          expect(env[:body]).to be_empty
+          expect(env[:request_headers]['Content-Type']).to be_nil
+          expect(env[:request_headers]['X-Spree-Token']).to eq(api_key)
           [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders.json')] 
         end
         expect(spree_client).to receive(:connection).and_return(connection)

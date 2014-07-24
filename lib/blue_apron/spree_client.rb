@@ -134,11 +134,11 @@ module BlueApron
         request.url "/api/orders"
         if options[:order]
           request.body = options[:order].to_json if options[:order]
+          setup_authenticated_json_request(request)
         else
-          request.body = {order: {}}.to_json
+          setup_authenticated_request(request)
         end
         request.params = options[:params] if options[:params]
-        setup_authenticated_json_request(request)
       end
 
       handle_response(response)
@@ -164,12 +164,17 @@ module BlueApron
 
     private
 
-      def setup_authenticated_json_request(request, options = {})
+      def setup_authenticated_request(request, options = {})
         if options[:order_token]
           request.headers['X-Spree-Order-Token'] = options[:order_token]
         else
           request.headers['X-Spree-Token'] = @api_key
         end
+      end
+
+      def setup_authenticated_json_request(request, options = {})
+        setup_authenticated_request(request, options)
+
         request.headers['Content-Type'] = 'application/json'
         request.headers['Accept'] = 'application/json'
       end
