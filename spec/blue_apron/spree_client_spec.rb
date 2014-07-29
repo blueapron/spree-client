@@ -102,6 +102,34 @@ describe BlueApron::SpreeClient do
     end    
   end
 
+  describe '#add_gift_detail' do
+    let(:order_number) { 'R1234' }
+    let(:line_item_id) { 123 }
+    let(:gift_detail) do
+      {
+        gift_detail: {
+          sender_first_name: "Fred",
+          sender_last_name: "McSun"
+        }
+      }
+    end
+
+    subject { spree_client.add_gift_detail(order_number, line_item_id, gift_detail) }
+
+    context 'when response is 201' do
+      before(:each) do
+        stubs.post("/api/orders/#{order_number}/line_items/#{line_item_id}/gift_details") do |env|
+          expect(env[:body]).to eq(gift_detail.to_json)
+          validate_json_request(env)
+          [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders_line_items_gift_details.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+    end
+  end
+
   describe '#update_line_item' do
     let(:order_number) { 'R1234' }
     let(:line_item_id) { 1 }

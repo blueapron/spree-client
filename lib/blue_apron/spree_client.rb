@@ -40,6 +40,16 @@ module BlueApron
       handle_response(response)
     end
 
+    def add_gift_detail(order_id, line_item_id, gift_detail)
+      response = connection.post do |request|
+        request.url "/api/orders/#{order_id}/line_items/#{line_item_id}/gift_details"
+        request.body = gift_detail.to_json
+        setup_authenticated_json_request(request)
+      end
+
+      handle_response(response)
+    end
+
     def update_line_item(order_id, line_item_id, quantity, options = {})
       response = connection.put do |request|
         request.url "/api/orders/#{order_id}/line_items/#{line_item_id}"
