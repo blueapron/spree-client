@@ -68,6 +68,15 @@ module BlueApron
       handle_response(response)
     end
 
+    def apply_coupon_code(id, coupon_code)
+      response = connection.put do |request|
+        request.url "/api/orders/#{id}/apply_coupon_code"
+        request.params = {coupon_code: coupon_code}
+        setup_authenticated_request(request)
+      end
+      handle_response(response)
+    end
+
     def update_order(id, order, options = {})
       response = connection.put do |request|
         request.url "/api/orders/#{id}"
@@ -172,6 +181,9 @@ module BlueApron
       end
     end
 
+    class ApiNotFoundError < ApiError
+    end
+
     private
 
       def setup_authenticated_request(request, options = {})
@@ -190,6 +202,7 @@ module BlueApron
       end
 
       def handle_response(response)
+        raise ApiNotFoundError.new(404, response.body) if response.status == 404
         raise ApiError.new(response.status, response.body) unless [200, 201, 204].include?(response.status)
 
         if response.status == 204

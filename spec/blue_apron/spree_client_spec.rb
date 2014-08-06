@@ -75,6 +75,25 @@ describe BlueApron::SpreeClient do
     end
   end
 
+  describe '#apply_coupon_code' do
+    let(:order_number) { 'R1234' }
+    let(:coupon_code) { "FRED" }
+
+    subject { spree_client.apply_coupon_code(order_number, coupon_code) }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.put("/api/orders/#{order_number}/apply_coupon_code") do |env|
+          validate_authenticated_request(env)
+          [200, {}, read_fixture_file('put_api_orders_apply_coupon_code.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+    end
+  end
+
   describe '#add_line_item' do
     let(:order_number) { 'R1234' }
     let(:line_item) do
@@ -423,6 +442,10 @@ describe BlueApron::SpreeClient do
 
     def validate_json_request(env) 
       expect(env[:request_headers]['Content-Type']).to eq('application/json')
+      validate_authenticated_request(env)
+    end
+
+    def validate_authenticated_request(env)
       expect(env[:request_headers]['X-Spree-Token']).to eq(api_key)
     end
 
