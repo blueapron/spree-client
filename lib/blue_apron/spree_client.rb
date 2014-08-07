@@ -105,6 +105,25 @@ module BlueApron
       handle_response(response)
     end
 
+    def get_current_order_for(user_id)
+      response = connection.get do |request|
+        request.url "/api/orders/current_for/#{user_id}"
+        setup_authenticated_json_request(request)
+      end
+
+      handle_response(response)
+    end
+
+    def get_orders(options = {})
+      response = connection.get do |request|
+        request.url "/api/orders"
+        request.params = options[:params] if options[:params]
+        setup_authenticated_json_request(request)
+      end
+
+      handle_response(response)
+    end
+
     def get_product(id)
       response = connection.get do |request|
         request.url "/api/products/#{id}"

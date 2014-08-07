@@ -191,6 +191,24 @@ describe BlueApron::SpreeClient do
     end
   end
 
+  describe '#get_current_for_order' do
+    let(:user_id) { 1234 }
+
+    subject { spree_client.get_current_order_for(user_id) }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.get("/api/orders/current_for/#{user_id}") do |env|
+          validate_json_request(env)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+    end
+  end
+
   describe '#get_order' do
     let(:order_number) { 'R1234' }
     subject { spree_client.get_order(order_number) }
@@ -200,6 +218,24 @@ describe BlueApron::SpreeClient do
         stubs.get("/api/orders/#{order_number}") do |env|
           validate_json_request(env)
           [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+    end
+  end
+
+  describe '#get_orders' do
+    let(:params) { {} }
+
+    subject { spree_client.get_orders(params) }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.get("/api/orders") do |env|
+          validate_json_request(env)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_orders.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
