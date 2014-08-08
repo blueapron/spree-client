@@ -1,0 +1,334 @@
+{
+   "iso3" : "USA",
+   "iso" : "US",
+   "states" : [
+      {
+         "abbr" : "AL",
+         "country_id" : 49,
+         "name" : "Alabama",
+         "id" : 39
+      },
+      {
+         "abbr" : "AK",
+         "country_id" : 49,
+         "name" : "Alaska",
+         "id" : 50
+      },
+      {
+         "abbr" : "AZ",
+         "country_id" : 49,
+         "name" : "Arizona",
+         "id" : 5
+      },
+      {
+         "abbr" : "AR",
+         "country_id" : 49,
+         "name" : "Arkansas",
+         "id" : 11
+      },
+      {
+         "abbr" : "CA",
+         "country_id" : 49,
+         "name" : "California",
+         "id" : 32
+      },
+      {
+         "abbr" : "CO",
+         "country_id" : 49,
+         "name" : "Colorado",
+         "id" : 45
+      },
+      {
+         "abbr" : "CT",
+         "country_id" : 49,
+         "name" : "Connecticut",
+         "id" : 47
+      },
+      {
+         "abbr" : "DE",
+         "country_id" : 49,
+         "name" : "Delaware",
+         "id" : 20
+      },
+      {
+         "abbr" : "DC",
+         "country_id" : 49,
+         "name" : "District of Columbia",
+         "id" : 13
+      },
+      {
+         "abbr" : "FL",
+         "country_id" : 49,
+         "name" : "Florida",
+         "id" : 27
+      },
+      {
+         "abbr" : "GA",
+         "country_id" : 49,
+         "name" : "Georgia",
+         "id" : 44
+      },
+      {
+         "abbr" : "HI",
+         "country_id" : 49,
+         "name" : "Hawaii",
+         "id" : 17
+      },
+      {
+         "abbr" : "ID",
+         "country_id" : 49,
+         "name" : "Idaho",
+         "id" : 14
+      },
+      {
+         "abbr" : "IL",
+         "country_id" : 49,
+         "name" : "Illinois",
+         "id" : 6
+      },
+      {
+         "abbr" : "IN",
+         "country_id" : 49,
+         "name" : "Indiana",
+         "id" : 35
+      },
+      {
+         "abbr" : "IA",
+         "country_id" : 49,
+         "name" : "Iowa",
+         "id" : 40
+      },
+      {
+         "abbr" : "KS",
+         "country_id" : 49,
+         "name" : "Kansas",
+         "id" : 9
+      },
+      {
+         "abbr" : "KY",
+         "country_id" : 49,
+         "name" : "Kentucky",
+         "id" : 42
+      },
+      {
+         "abbr" : "LA",
+         "country_id" : 49,
+         "name" : "Louisiana",
+         "id" : 23
+      },
+      {
+         "abbr" : "ME",
+         "country_id" : 49,
+         "name" : "Maine",
+         "id" : 34
+      },
+      {
+         "abbr" : "MD",
+         "country_id" : 49,
+         "name" : "Maryland",
+         "id" : 26
+      },
+      {
+         "abbr" : "MA",
+         "country_id" : 49,
+         "name" : "Massachusetts",
+         "id" : 46
+      },
+      {
+         "abbr" : "MI",
+         "country_id" : 49,
+         "name" : "Michigan",
+         "id" : 1
+      },
+      {
+         "abbr" : "MN",
+         "country_id" : 49,
+         "name" : "Minnesota",
+         "id" : 29
+      },
+      {
+         "abbr" : "MS",
+         "country_id" : 49,
+         "name" : "Mississippi",
+         "id" : 41
+      },
+      {
+         "abbr" : "MO",
+         "country_id" : 49,
+         "name" : "Missouri",
+         "id" : 10
+      },
+      {
+         "abbr" : "MT",
+         "country_id" : 49,
+         "name" : "Montana",
+         "id" : 24
+      },
+      {
+         "abbr" : "NE",
+         "country_id" : 49,
+         "name" : "Nebraska",
+         "id" : 15
+      },
+      {
+         "abbr" : "NV",
+         "country_id" : 49,
+         "name" : "Nevada",
+         "id" : 12
+      },
+      {
+         "abbr" : "NH",
+         "country_id" : 49,
+         "name" : "New Hampshire",
+         "id" : 7
+      },
+      {
+         "abbr" : "NJ",
+         "country_id" : 49,
+         "name" : "New Jersey",
+         "id" : 30
+      },
+      {
+         "abbr" : "NM",
+         "country_id" : 49,
+         "name" : "New Mexico",
+         "id" : 43
+      },
+      {
+         "abbr" : "NY",
+         "country_id" : 49,
+         "name" : "New York",
+         "id" : 48
+      },
+      {
+         "abbr" : "NC",
+         "country_id" : 49,
+         "name" : "North Carolina",
+         "id" : 8
+      },
+      {
+         "abbr" : "ND",
+         "country_id" : 49,
+         "name" : "North Dakota",
+         "id" : 33
+      },
+      {
+         "abbr" : "OH",
+         "country_id" : 49,
+         "name" : "Ohio",
+         "id" : 31
+      },
+      {
+         "abbr" : "OK",
+         "country_id" : 49,
+         "name" : "Oklahoma",
+         "id" : 22
+      },
+      {
+         "abbr" : "OR",
+         "country_id" : 49,
+         "name" : "Oregon",
+         "id" : 37
+      },
+      {
+         "abbr" : "PA",
+         "country_id" : 49,
+         "name" : "Pennsylvania",
+         "id" : 16
+      },
+      {
+         "abbr" : "RI",
+         "country_id" : 49,
+         "name" : "Rhode Island",
+         "id" : 21
+      },
+      {
+         "abbr" : "SC",
+         "country_id" : 49,
+         "name" : "South Carolina",
+         "id" : 49
+      },
+      {
+         "abbr" : "SD",
+         "country_id" : 49,
+         "name" : "South Dakota",
+         "id" : 2
+      },
+      {
+         "abbr" : "TN",
+         "country_id" : 49,
+         "name" : "Tennessee",
+         "id" : 25
+      },
+      {
+         "abbr" : "TX",
+         "country_id" : 49,
+         "name" : "Texas",
+         "id" : 36
+      },
+      {
+         "abbr" : "AA",
+         "country_id" : 49,
+         "name" : "U.S. Armed Forces - Americas",
+         "id" : 52
+      },
+      {
+         "abbr" : "AE",
+         "country_id" : 49,
+         "name" : "U.S. Armed Forces - Europe",
+         "id" : 53
+      },
+      {
+         "abbr" : "AP",
+         "country_id" : 49,
+         "name" : "U.S. Armed Forces - Pacific",
+         "id" : 54
+      },
+      {
+         "abbr" : "UT",
+         "country_id" : 49,
+         "name" : "Utah",
+         "id" : 18
+      },
+      {
+         "abbr" : "VT",
+         "country_id" : 49,
+         "name" : "Vermont",
+         "id" : 19
+      },
+      {
+         "abbr" : "VA",
+         "country_id" : 49,
+         "name" : "Virginia",
+         "id" : 28
+      },
+      {
+         "abbr" : "WA",
+         "country_id" : 49,
+         "name" : "Washington",
+         "id" : 3
+      },
+      {
+         "abbr" : "WV",
+         "country_id" : 49,
+         "name" : "West Virginia",
+         "id" : 51
+      },
+      {
+         "abbr" : "WI",
+         "country_id" : 49,
+         "name" : "Wisconsin",
+         "id" : 4
+      },
+      {
+         "abbr" : "WY",
+         "country_id" : 49,
+         "name" : "Wyoming",
+         "id" : 38
+      }
+   ],
+   "name" : "United States",
+   "iso_name" : "UNITED STATES",
+   "id" : 49,
+   "numcode" : 840
+}

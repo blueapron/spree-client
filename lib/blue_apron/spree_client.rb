@@ -8,10 +8,24 @@ module BlueApron
   class SpreeClient
     attr_accessor :api_key
     attr_accessor :url
+    attr_accessor :logger
+
+    def get_countries
+      get "/api/countries"
+    end
+
+    def get_country(id)
+      get "/api/countries/#{id}"
+    end
+
+    def get_united_states
+      get_country(49)
+    end
 
     def initialize(options = {})
       @api_key = options[:api_key]
       @url = options[:url]
+      @logger = options[:logger]
     end
 
     def next(order_id)
@@ -30,6 +44,15 @@ module BlueApron
       handle_response(response)
     end
 
+    def add_payment(order_id, order, payment_source)
+      response = connection.put do |request|
+        request.url "/api/checkouts/#{order_id}"
+        request.body = {order: order, payment_source: payment_source}.to_json
+        setup_authenticated_json_request(request)
+      end
+      handle_response(response)
+    end
+
     def add_line_item(order_id, line_item, options = {})
       response = connection.post do |request|
         request.url "/api/orders/#{order_id}/line_items"
@@ -40,10 +63,10 @@ module BlueApron
       handle_response(response)
     end
 
-    def add_gift_detail(order_id, line_item_id, gift_detail)
+    def add_blue_apron_gift(order_id, line_item_id, blue_apron_gift)
       response = connection.post do |request|
-        request.url "/api/orders/#{order_id}/line_items/#{line_item_id}/gift_details"
-        request.body = gift_detail.to_json
+        request.url "/api/orders/#{order_id}/line_items/#{line_item_id}/blue_apron_gifts"
+        request.body = blue_apron_gift.to_json
         setup_authenticated_json_request(request)
       end
 
@@ -97,21 +120,11 @@ module BlueApron
     end
 
     def get_order(id, options = {})
-      response = connection.get do |request|
-        request.url "/api/orders/#{id}"
-        setup_authenticated_json_request(request, options)
-      end
-
-      handle_response(response)
+      get "/api/orders/#{id}", options
     end
 
     def get_current_order_for(user_id)
-      response = connection.get do |request|
-        request.url "/api/orders/current_for/#{user_id}"
-        setup_authenticated_json_request(request)
-      end
-
-      handle_response(response)
+      get "/api/orders/current_for/#{user_id}"
     end
 
     def get_orders(options = {})
@@ -125,12 +138,7 @@ module BlueApron
     end
 
     def get_product(id)
-      response = connection.get do |request|
-        request.url "/api/products/#{id}"
-        setup_authenticated_json_request(request)
-      end
-
-      handle_response(response)
+      get "/api/products/#{id}"
     end
 
     def get_products(options = {})
@@ -157,12 +165,7 @@ module BlueApron
     ##
     # Get a list of taxonomies and taxons.
     def get_taxonomies
-      response = connection.get do |request|
-        request.url "/api/taxonomies"
-        setup_authenticated_json_request(request)
-      end
-
-      handle_response(response)
+      get "/api/taxonomies"
     end
 
     ##
@@ -205,6 +208,14 @@ module BlueApron
 
     private
 
+      def get(url, options = {})
+        response = connection.get do |request|
+          request.url url
+          setup_authenticated_json_request(request, options)
+        end
+        handle_response(response)
+      end
+
       def setup_authenticated_request(request, options = {})
         if options[:order_token]
           request.headers['X-Spree-Order-Token'] = options[:order_token]
@@ -235,9 +246,9 @@ module BlueApron
       
       def connection
         Faraday.new(:url => @url) do |faraday|
-          faraday.request  :url_encoded             # form-encode POST params
-          faraday.response :logger                  # log requests to STDOUT
-          faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+          faraday.request  :url_encoded
+          faraday.adapter  Faraday.default_adapter
+          faraday.use      Faraday::Response::Logger, @logger
         end
       end
   end

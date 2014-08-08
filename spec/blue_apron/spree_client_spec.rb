@@ -75,6 +75,45 @@ describe BlueApron::SpreeClient do
     end
   end
 
+  describe '#get_country' do
+    let(:id) { 101 }
+
+    subject { spree_client.get_country(id) }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.get("/api/countries/#{id}") do |env|
+          validate_authenticated_request(env)
+          [200, {}, read_fixture_file('get_api_country.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+    end
+  end
+
+  describe '#add_payment' do
+    let(:order_number) { 'R1234' }
+    let(:order) { {foo: 'bar'} }
+    let(:payment_source) { {blue: 'apron'} }
+
+    subject { spree_client.add_payment(order_number, order, payment_source) }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.put("/api/checkouts/#{order_number}") do |env|
+          validate_authenticated_request(env)
+          expect(env[:body]).to eq({order: order, payment_source: payment_source}.to_json)
+          [200, {}, read_fixture_file('get_api_order.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+    end
+  end
+
   describe '#apply_coupon_code' do
     let(:order_number) { 'R1234' }
     let(:coupon_code) { "FRED" }
@@ -121,26 +160,26 @@ describe BlueApron::SpreeClient do
     end    
   end
 
-  describe '#add_gift_detail' do
+  describe '#add_blue_apron_gift' do
     let(:order_number) { 'R1234' }
     let(:line_item_id) { 123 }
-    let(:gift_detail) do
+    let(:blue_apron_gift) do
       {
-        gift_detail: {
+        blue_apron_gift: {
           sender_first_name: "Fred",
           sender_last_name: "McSun"
         }
       }
     end
 
-    subject { spree_client.add_gift_detail(order_number, line_item_id, gift_detail) }
+    subject { spree_client.add_blue_apron_gift(order_number, line_item_id, blue_apron_gift) }
 
     context 'when response is 201' do
       before(:each) do
-        stubs.post("/api/orders/#{order_number}/line_items/#{line_item_id}/gift_details") do |env|
-          expect(env[:body]).to eq(gift_detail.to_json)
+        stubs.post("/api/orders/#{order_number}/line_items/#{line_item_id}/blue_apron_gifts") do |env|
+          expect(env[:body]).to eq(blue_apron_gift.to_json)
           validate_json_request(env)
-          [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders_line_items_gift_details.json')]
+          [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders_line_items_blue_apron_gifts.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
@@ -477,6 +516,7 @@ describe BlueApron::SpreeClient do
     end
 
     def validate_json_request(env) 
+      expect(env[:request_headers]['Accept']).to eq('application/json')
       expect(env[:request_headers]['Content-Type']).to eq('application/json')
       validate_authenticated_request(env)
     end
