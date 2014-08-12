@@ -44,10 +44,10 @@ module BlueApron
       handle_response(response)
     end
 
-    def add_payment(order_id, order, payment_source)
+    def update_checkout(order_id, payload)
       response = connection.put do |request|
         request.url "/api/checkouts/#{order_id}"
-        request.body = {order: order, payment_source: payment_source}.to_json
+        request.body = payload.to_json
         setup_authenticated_json_request(request)
       end
       handle_response(response)

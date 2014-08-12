@@ -93,27 +93,6 @@ describe BlueApron::SpreeClient do
     end
   end
 
-  describe '#add_payment' do
-    let(:order_number) { 'R1234' }
-    let(:order) { {foo: 'bar'} }
-    let(:payment_source) { {blue: 'apron'} }
-
-    subject { spree_client.add_payment(order_number, order, payment_source) }
-
-    context 'when response is 200' do
-      before(:each) do
-        stubs.put("/api/checkouts/#{order_number}") do |env|
-          validate_authenticated_request(env)
-          expect(env[:body]).to eq({order: order, payment_source: payment_source}.to_json)
-          [200, {}, read_fixture_file('get_api_order.json')]
-        end
-        expect(spree_client).to receive(:connection).and_return(connection)
-      end
-
-      it_behaves_like "a Hashie::Mash"
-    end
-  end
-
   describe '#apply_coupon_code' do
     let(:order_number) { 'R1234' }
     let(:coupon_code) { "FRED" }
