@@ -58,7 +58,7 @@ module BlueApron
         request.url "/api/orders/#{order_id}/line_items"
         request.body = line_item.to_json
         setup_authenticated_json_request(request, options)
-      end 
+      end
 
       handle_response(response)
     end
@@ -71,6 +71,10 @@ module BlueApron
       end
 
       handle_response(response)
+    end
+
+    def get_line_item(order_id, line_item_id)
+      get "/api/orders/#{order_id}/line_items/#{line_item_id}"
     end
 
     def update_line_item(order_id, line_item_id, quantity, options = {})
@@ -110,7 +114,7 @@ module BlueApron
       handle_response(response)
     end
 
-    def empty_order(id, options = {}) 
+    def empty_order(id, options = {})
       response = connection.put do |request|
         request.url "/api/orders/#{id}/empty"
         setup_authenticated_json_request(request, options)
@@ -147,7 +151,7 @@ module BlueApron
         request.params = options[:params] if options[:params]
         setup_authenticated_json_request(request)
       end
- 
+
       handle_response(response)
     end
 
@@ -192,7 +196,7 @@ module BlueApron
       def initialize(status, body)
         @status = status
         @body = body
-        
+
         def errors
           if @status == 422
             Hashie::Mash.new JSON.parse(@body)
@@ -240,10 +244,10 @@ module BlueApron
         elsif response.body && !response.body.empty?
           Hashie::Mash.new JSON.parse(response.body)
         else
-          true 
+          true
         end
       end
-      
+
       def connection
         Faraday.new(:url => @url) do |faraday|
           faraday.request  :url_encoded
