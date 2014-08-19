@@ -22,6 +22,10 @@ module BlueApron
       get_country(49)
     end
 
+    def get_promotion(id)
+      get "/api/promotions/#{id}"      
+    end
+
     def initialize(options = {})
       @api_key = options[:api_key]
       @url = options[:url]
@@ -128,13 +132,7 @@ module BlueApron
     end
 
     def get_orders(options = {})
-      response = connection.get do |request|
-        request.url "/api/orders"
-        request.params = options[:params] if options[:params]
-        setup_authenticated_json_request(request)
-      end
-
-      handle_response(response)
+      get "/api/orders", options
     end
 
     def get_product(id)
@@ -142,13 +140,7 @@ module BlueApron
     end
 
     def get_products(options = {})
-      response = connection.get do |request|
-        request.url "/api/products"
-        request.params = options[:params] if options[:params]
-        setup_authenticated_json_request(request)
-      end
- 
-      handle_response(response)
+      get "/api/products", options
     end
 
     ##
@@ -211,6 +203,7 @@ module BlueApron
       def get(url, options = {})
         response = connection.get do |request|
           request.url url
+          request.params = options[:params] if options[:params]  
           setup_authenticated_json_request(request, options)
         end
         handle_response(response)
