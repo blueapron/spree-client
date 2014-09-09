@@ -58,23 +58,16 @@ module BlueApron
     end
 
     def add_line_item(order_id, line_item, options = {})
-      response = connection.post do |request|
-        request.url "/api/orders/#{order_id}/line_items"
-        request.body = line_item.to_json
-        setup_authenticated_json_request(request, options)
-      end 
-
-      handle_response(response)
+      options[:body] = line_item.to_json
+      post "/api/orders/#{order_id}/line_items", options
     end
 
     def add_blue_apron_gift(order_id, line_item_id, blue_apron_gift)
-      response = connection.post do |request|
-        request.url "/api/orders/#{order_id}/line_items/#{line_item_id}/blue_apron_gifts"
-        request.body = blue_apron_gift.to_json
-        setup_authenticated_json_request(request)
-      end
+      post "/api/orders/#{order_id}/line_items/#{line_item_id}/blue_apron_gifts", body: blue_apron_gift.to_json
+    end
 
-      handle_response(response)
+    def add_blue_apron_recurring_preference(order_id, line_item_id)
+      post "/api/orders/#{order_id}/line_items/#{line_item_id}/blue_apron_recurring_preferences"
     end
 
     def update_line_item(order_id, line_item_id, quantity, options = {})
@@ -208,6 +201,15 @@ module BlueApron
         end
         handle_response(response)
       end
+
+    def post(url, options = {})
+      response = connection.post do |request|
+        request.url url
+        request.body = options[:body] if options[:body]
+        setup_authenticated_json_request(request)
+      end
+      handle_response(response)
+    end
 
       def setup_authenticated_request(request, options = {})
         if options[:order_token]
