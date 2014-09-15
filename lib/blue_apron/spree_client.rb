@@ -197,6 +197,7 @@ module BlueApron
         response = connection.get do |request|
           request.url url
           request.params = options[:params] if options[:params]  
+          setup_timeouts(request)
           setup_authenticated_json_request(request, options)
         end
         handle_response(response)
@@ -206,10 +207,16 @@ module BlueApron
       response = connection.post do |request|
         request.url url
         request.body = options[:body] if options[:body]
+        setup_timeouts(request)
         setup_authenticated_json_request(request)
       end
       handle_response(response)
     end
+
+      def setup_timeouts(request)
+        #request.options.timeout = 10 
+        request.options.open_timeout = 2
+      end
 
       def setup_authenticated_request(request, options = {})
         if options[:order_token]
