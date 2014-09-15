@@ -33,28 +33,15 @@ module BlueApron
     end
 
     def next(order_id)
-      response = connection.put do |request|
-        request.url "/api/checkouts/#{order_id}/next"
-        setup_authenticated_json_request(request)
-      end
-      handle_response(response)
+      put "/api/checkouts/#{order_id}/next"
     end
 
     def advance(order_id)
-      response = connection.put do |request|
-        request.url "/api/checkouts/#{order_id}/advance"
-        setup_authenticated_json_request(request)
-      end
-      handle_response(response)
+      put "/api/checkouts/#{order_id}/advance"
     end
 
     def update_checkout(order_id, payload)
-      response = connection.put do |request|
-        request.url "/api/checkouts/#{order_id}"
-        request.body = payload.to_json
-        setup_authenticated_json_request(request)
-      end
-      handle_response(response)
+      put "/api/checkouts/#{order_id}", body: payload.to_json
     end
 
     def add_line_item(order_id, line_item, options = {})
@@ -71,13 +58,8 @@ module BlueApron
     end
 
     def update_line_item(order_id, line_item_id, quantity, options = {})
-      response = connection.put do |request|
-        request.url "/api/orders/#{order_id}/line_items/#{line_item_id}"
-        request.body = {line_item: {quantity: quantity}}.to_json
-        setup_authenticated_json_request(request, options)
-      end
-
-      handle_response(response)
+      options[:body] = {line_item: {quantity: quantity}}.to_json
+      put "/api/orders/#{order_id}/line_items/#{line_item_id}", options
     end
 
     def delete_line_item(order_id, line_item_id, options = {})
@@ -89,31 +71,16 @@ module BlueApron
     end
 
     def apply_coupon_code(id, coupon_code)
-      response = connection.put do |request|
-        request.url "/api/orders/#{id}/apply_coupon_code"
-        request.params = {coupon_code: coupon_code}
-        setup_authenticated_request(request)
-      end
-      handle_response(response)
+      put "/api/orders/#{id}/apply_coupon_code", params: {coupon_code: coupon_code}
     end
 
     def update_order(id, order, options = {})
-      response = connection.put do |request|
-        request.url "/api/orders/#{id}"
-        request.body = order.to_json
-        setup_authenticated_json_request(request, options)
-      end
-
-      handle_response(response)
+      options[:body] = order.to_json
+      put "/api/orders/#{id}", options
     end
 
     def empty_order(id, options = {}) 
-      response = connection.put do |request|
-        request.url "/api/orders/#{id}/empty"
-        setup_authenticated_json_request(request, options)
-      end
-
-      handle_response(response)
+      put "/api/orders/#{id}/empty", options
     end
 
     def get_order(id, options = {})
@@ -203,15 +170,26 @@ module BlueApron
         handle_response(response)
       end
 
-    def post(url, options = {})
-      response = connection.post do |request|
-        request.url url
-        request.body = options[:body] if options[:body]
-        setup_timeouts(request)
-        setup_authenticated_json_request(request)
+      def post(url, options = {})
+        response = connection.post do |request|
+          request.url url
+          request.body = options[:body] if options[:body]
+          setup_timeouts(request)
+          setup_authenticated_json_request(request)
+        end
+        handle_response(response)
       end
-      handle_response(response)
-    end
+
+      def put(url, options = {})
+        response = connection.put do |request|
+          request.url url
+          request.body = options[:body] if options[:body]
+          request.params = options[:params] if options[:params]
+          setup_timeouts(request)
+          setup_authenticated_json_request(request)
+        end
+        handle_response(response)
+      end
 
       def setup_timeouts(request)
         #request.options.timeout = 10 
