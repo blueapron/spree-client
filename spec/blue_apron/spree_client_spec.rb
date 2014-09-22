@@ -4,8 +4,8 @@ describe BlueApron::SpreeClient do
   let(:api_key) { 'abcdef' }
   let(:url) { 'http://nowhere.com' }
 
-  let(:spree_client) do 
-    client = BlueApron::SpreeClient.new 
+  let(:spree_client) do
+    client = BlueApron::SpreeClient.new
     client.api_key = api_key
     client.url = url
     client
@@ -136,7 +136,7 @@ describe BlueApron::SpreeClient do
       end
 
       it_behaves_like "a Hashie::Mash"
-    end    
+    end
   end
 
   describe '#add_blue_apron_gift' do
@@ -262,6 +262,24 @@ describe BlueApron::SpreeClient do
     end
   end
 
+  describe '#get_orders_for' do
+    let(:params) { {} }
+
+    subject { spree_client.get_orders_for(1) }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.get("/api/orders") do |env|
+          validate_json_request(env)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_orders.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+    end
+  end
+
   describe '#update_order' do
     let(:order_number) { 'R1234' }
     let(:order) do
@@ -332,7 +350,7 @@ describe BlueApron::SpreeClient do
   describe '#get_product' do
     let(:id) { 1 }
     subject { spree_client.get_product(id) }
-    
+
     context 'when response is 200' do
       before(:each) do
         stubs.get("/api/products/#{id}") do |env|
@@ -360,9 +378,9 @@ describe BlueApron::SpreeClient do
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash" 
+      it_behaves_like "a Hashie::Mash"
 
-      it_behaves_like "a paginated response" 
+      it_behaves_like "a paginated response"
 
       it "should contain products" do
         expect(subject.products).to be_a(Array)
@@ -420,7 +438,7 @@ describe BlueApron::SpreeClient do
       it_behaves_like "a paginated response"
 
       it 'should contain taxonomies' do
-        expect(subject.taxonomies).to be_a(Array) 
+        expect(subject.taxonomies).to be_a(Array)
       end
 
       it 'should contain taxons in taxonomies' do
@@ -433,9 +451,9 @@ describe BlueApron::SpreeClient do
 
   describe '#create_order' do
     let(:order) do
-      { 
+      {
         order: {
-          email: 'spree@example.com' 
+          email: 'spree@example.com'
         }
       }
     end
@@ -446,7 +464,7 @@ describe BlueApron::SpreeClient do
           expect(env[:body]).to be_empty
           expect(env[:request_headers]['Content-Type']).to be_nil
           expect(env[:request_headers]['X-Spree-Token']).to eq(api_key)
-          [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders.json')] 
+          [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
@@ -458,7 +476,7 @@ describe BlueApron::SpreeClient do
 
       it 'should have an id' do
         expect(subject.id).to eq(30)
-      end 
+      end
     end
 
     context 'when order params provided' do
@@ -466,7 +484,7 @@ describe BlueApron::SpreeClient do
         stubs.post('/api/orders') do |env|
           expect(env[:body]).to eq(order.to_json)
           validate_json_request(env)
-          [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders.json')] 
+          [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
@@ -494,7 +512,7 @@ describe BlueApron::SpreeClient do
       expect(spree_client).to receive(:connection).and_return(connection)
     end
 
-    def validate_json_request(env) 
+    def validate_json_request(env)
       expect(env[:request_headers]['Accept']).to eq('application/json')
       expect(env[:request_headers]['Content-Type']).to eq('application/json')
       validate_authenticated_request(env)
@@ -505,7 +523,7 @@ describe BlueApron::SpreeClient do
     end
 
     def read_fixture_file(file_name)
-      content = "" 
+      content = ""
       File.open("#{File.dirname(__FILE__)}/../fixtures/#{file_name}", "r") do |f|
         f.each_line do |line|
           content += line

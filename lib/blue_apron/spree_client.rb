@@ -23,7 +23,7 @@ module BlueApron
     end
 
     def get_promotion(id)
-      get "/api/promotions/#{id}"      
+      get "/api/promotions/#{id}"
     end
 
     def initialize(options = {})
@@ -79,7 +79,7 @@ module BlueApron
       put "/api/orders/#{id}", options
     end
 
-    def empty_order(id, options = {}) 
+    def empty_order(id, options = {})
       put "/api/orders/#{id}/empty", options
     end
 
@@ -93,6 +93,10 @@ module BlueApron
 
     def get_orders(options = {})
       get "/api/orders", options
+    end
+
+    def get_orders_for(user_id)
+      get_orders({params: {'q[blue_apron_user_id_eq]' => user_id}})
     end
 
     def get_product(id)
@@ -144,7 +148,7 @@ module BlueApron
       def initialize(status, body)
         @status = status
         @body = body
-        
+
         def errors
           if @status == 422
             Hashie::Mash.new JSON.parse(@body)
@@ -163,7 +167,7 @@ module BlueApron
       def get(url, options = {})
         response = connection.get do |request|
           request.url url
-          request.params = options[:params] if options[:params]  
+          request.params = options[:params] if options[:params]
           setup_timeouts(request)
           setup_authenticated_json_request(request, options)
         end
@@ -192,7 +196,7 @@ module BlueApron
       end
 
       def setup_timeouts(request)
-        #request.options.timeout = 10 
+        #request.options.timeout = 10
         request.options.open_timeout = 2
       end
 
@@ -220,10 +224,10 @@ module BlueApron
         elsif response.body && !response.body.empty?
           Hashie::Mash.new JSON.parse(response.body)
         else
-          true 
+          true
         end
       end
-      
+
       def connection
         Faraday.new(:url => @url) do |faraday|
           faraday.request  :url_encoded
