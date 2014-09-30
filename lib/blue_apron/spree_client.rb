@@ -95,8 +95,8 @@ module BlueApron
       get "/api/orders", options
     end
 
-    def get_orders_for(user_id)
-      get_orders({params: {'q[blue_apron_user_id_eq]' => user_id}})
+    def get_orders_for(user_id, page = 1)
+      get_orders({params: {'q[blue_apron_user_id_eq]' => user_id, page: page}})
     end
 
     def get_product(id)
