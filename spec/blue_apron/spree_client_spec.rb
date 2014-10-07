@@ -69,6 +69,20 @@ describe BlueApron::SpreeClient do
     end
   end
 
+  describe '#timeout' do
+    context 'when defaulted' do
+      it 'should be 4' do
+        expect(spree_client.send(:timeout)).to eq(4)
+      end
+    end
+
+    context 'when initialized' do
+      it 'should be the constructor value' do
+        expect(BlueApron::SpreeClient.new(timeout: 10).send(:timeout)).to eq(10)
+      end
+    end
+  end
+
   describe '#connection' do
     it 'should not be nil' do
       expect(spree_client.send(:connection)).to_not be_nil
