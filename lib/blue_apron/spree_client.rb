@@ -10,6 +10,13 @@ module BlueApron
     attr_accessor :url
     attr_accessor :logger
 
+    def initialize(options = {})
+      @api_key = options[:api_key]
+      @url = options[:url]
+      @logger = options[:logger]
+      @timeout = options[:timeout]
+    end
+
     def get_countries
       get "/api/countries"
     end
@@ -24,12 +31,6 @@ module BlueApron
 
     def get_promotion(id)
       get "/api/promotions/#{id}"
-    end
-
-    def initialize(options = {})
-      @api_key = options[:api_key]
-      @url = options[:url]
-      @logger = options[:logger]
     end
 
     def next(order_id)
@@ -197,7 +198,11 @@ module BlueApron
 
       def setup_timeouts(request)
         #request.options.timeout = 10
-        request.options.open_timeout = 2
+        request.options.open_timeout = timeout
+      end
+
+      def timeout
+        @timeout || 4
       end
 
       def setup_authenticated_request(request, options = {})
