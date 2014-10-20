@@ -1,5 +1,6 @@
 require_relative '../blue_apron'
 
+require 'sanitize'
 require 'faraday'
 require 'json'
 require 'hashie'
@@ -101,11 +102,17 @@ module BlueApron
     end
 
     def get_product(id)
-      get "/api/products/#{id}"
+      product = get "/api/products/#{id}"
+      sanitize_product!(product)
+      product
     end
 
     def get_products(options = {})
-      get "/api/products", options
+      response = get "/api/products", options
+      response.products.each do |product|
+        sanitize_product!(product)
+      end
+      response
     end
 
     ##
@@ -239,6 +246,20 @@ module BlueApron
           faraday.adapter  Faraday.default_adapter
           faraday.use      Faraday::Response::Logger, @logger
         end
+      end
+
+      ##
+      # Clean up HTML in known sections where HTML markup is being inserted in Spree.
+      def sanitize_product!(product)
+        product.cms_text = sanitize_html(product.cms_text)
+        product.description = sanitize_html(product.description)
+        product.product_properties.each do |pp|
+          pp.value = sanitize_html(pp.value) 
+        end unless product.product_properties.nil?
+      end
+
+      def sanitize_html(s)
+        Sanitize.fragment(s, Sanitize::Config::RELAXED)
       end
   end
 end
