@@ -514,6 +514,31 @@ describe BlueApron::SpreeClient do
     end
   end
 
+  describe '#sanitize_product' do
+    let(:html_text) { '<h1>Hello World <script>alert("HACKED")</script></h1>' }
+    let(:product) { Hashie::Mash.new(cms_text: html_text, description: html_text, product_properties: product_properties) }
+    let(:product_properties) { [Hashie::Mash.new(value: html_text)] }
+
+    subject { spree_client.send(:sanitize_product!, product) }
+
+    it 'should remove <script> tags' do
+      subject
+      cleaned = '<h1>Hello World alert("HACKED")</h1>'
+      expect(product.cms_text).to eq(cleaned)
+      expect(product.description).to eq(cleaned)
+      expect(product.product_properties.first.value).to eq(cleaned)
+    end
+  end
+
+  describe '#sanitize_html' do
+    subject { spree_client.send(:sanitize_html, html) }
+    let(:html) { '<h1>Hello World <script>alert("HACKED")</script></h1>' }
+
+    it 'should remove <script> tags' do
+      expect(subject).to eq('<h1>Hello World alert("HACKED")</h1>')       
+    end
+  end
+
   private
 
     def with_faraday_stub
