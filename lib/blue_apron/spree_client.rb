@@ -89,6 +89,10 @@ module BlueApron
       get "/api/orders/#{id}", options
     end
 
+    def get_shipment(id, options = {})
+      get "/api/shipments/#{id}", options
+    end
+
     def get_current_order_for(user_id)
       get "/api/orders/current_for/#{user_id}"
     end
@@ -254,7 +258,7 @@ module BlueApron
         product.cms_text = sanitize_html(product.cms_text)
         product.description = sanitize_html(product.description)
         product.product_properties.each do |pp|
-          pp.value = sanitize_html(pp.value) 
+          pp.value = sanitize_html(pp.value)
         end unless product.product_properties.nil?
       end
 
