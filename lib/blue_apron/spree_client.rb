@@ -76,6 +76,16 @@ module BlueApron
       put "/api/orders/#{id}/apply_coupon_code", params: {coupon_code: coupon_code}
     end
 
+    def patch_order_key_value(id, key, value, options = {})
+      options[:body] = { :order => {key => value} }.to_json
+      patch "/api/orders/#{id}", options
+    end
+
+    def patch_order(id, order, options = {})
+      options[:body] = order.to_json
+      patch "/api/orders/#{id}", options
+    end
+
     def update_order(id, order, options = {})
       options[:body] = order.to_json
       put "/api/orders/#{id}", options
@@ -196,8 +206,16 @@ module BlueApron
         handle_response(response)
       end
 
+      def patch(url, options = {})
+        perform_http_action :patch, url, options
+      end
+
       def put(url, options = {})
-        response = connection.put do |request|
+        perform_http_action :put, url, options
+      end
+
+      def perform_http_action(verb, url, options = {})
+        response = connection.send(verb) do |request|
           request.url url
           request.body = options[:body] if options[:body]
           request.params = options[:params] if options[:params]

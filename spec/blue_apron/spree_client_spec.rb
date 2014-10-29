@@ -294,6 +294,53 @@ describe BlueApron::SpreeClient do
     end
   end
 
+  describe '#patch_order_key_value' do
+    let(:order_number) { 'R1234' }
+
+    subject { spree_client.patch_order_key_value(order_number, "foo", "bar") }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.patch("/api/orders/#{order_number}") do |env|
+          validate_json_request(env)
+          expect(env[:body]).to eq({:order => {'foo' => 'bar'}}.to_json)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+      it_behaves_like "an order"
+    end
+  end
+
+describe '#patch_order' do
+    let(:order_number) { 'R1234' }
+    let(:order) do
+      {
+        order: {
+          email: 'cs@cs.com'
+        }
+      }
+    end
+
+    subject { spree_client.patch_order(order_number, order) }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.patch("/api/orders/#{order_number}") do |env|
+          validate_json_request(env)
+          expect(env[:body]).to eq(order.to_json)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+      it_behaves_like "an order"
+    end
+  end
+
   describe '#update_order' do
     let(:order_number) { 'R1234' }
     let(:order) do
@@ -535,7 +582,7 @@ describe BlueApron::SpreeClient do
     let(:html) { '<h1>Hello World <script>alert("HACKED")</script></h1>' }
 
     it 'should remove <script> tags' do
-      expect(subject).to eq('<h1>Hello World alert("HACKED")</h1>')       
+      expect(subject).to eq('<h1>Hello World alert("HACKED")</h1>')
     end
   end
 
