@@ -126,6 +126,22 @@ describe BlueApron::SpreeClient do
     end
   end
 
+  describe '#get_taxon' do
+    subject { spree_client.get_taxon(1, 2) }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.get("/api/taxonomies/1/taxons/2") do |env|
+          validate_json_request(env)
+          [200, {'Content-Type' => 'application/json'}, "{}"]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+    end
+  end
+
   describe '#add_line_item' do
     let(:order_number) { 'R1234' }
     let(:line_item) do

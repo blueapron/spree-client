@@ -147,6 +147,12 @@ module BlueApron
     end
 
     ##
+    # Get a specifix taxon.
+    def get_taxon(taxonomy_id, taxon_id)
+      get "/api/taxonomies/#{taxonomy_id}/taxons/#{taxon_id}"
+    end
+
+    ##
     # Create a Spree::Order.
     def create_order(options = {})
       response = connection.post do |request|
