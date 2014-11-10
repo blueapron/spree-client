@@ -146,8 +146,8 @@ module BlueApron
 
     ##
     # Get a list of taxonomies and taxons.
-    def get_taxonomies
-      get "/api/taxonomies"
+    def get_taxonomies(options = {})
+      get "/api/taxonomies", options
     end
 
     ##
