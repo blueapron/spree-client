@@ -19,7 +19,7 @@ module BlueApron
     end
 
     def get_variant_stock(variant_id, stock_location_id = 1)
-      get "/api/stock_locations/#{stock_location_id}/stock_items/#{variant_id}"
+      get "/api/stock_locations/#{stock_location_id}/stock_items", params: {'q[variant_id_eq]' => variant_id}
     end
 
     def get_countries
