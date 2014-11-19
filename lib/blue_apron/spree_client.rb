@@ -276,7 +276,9 @@ module BlueApron
         Faraday.new(:url => @url) do |faraday|
           faraday.request  :url_encoded
           faraday.adapter  Faraday.default_adapter
-          faraday.use      Faraday::Response::Logger, @logger
+          if @logger
+            faraday.use      Faraday::Response::Logger, @logger
+          end
         end
       end
 
