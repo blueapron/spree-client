@@ -115,7 +115,7 @@ module BlueApron
       get "/api/orders", options
     end
 
-    def get_orders_for(user_id, state = ['confirm', 'complete'], page = 1)
+    def get_orders_for(user_id, state = ['confirm', 'complete', 'returned'], page = 1)
       get_orders({params: {'q[blue_apron_user_id_eq]' => user_id, 'q[state_in]' => state, 'q[s]' => 'completed_at desc', page: page}})
     end
 
