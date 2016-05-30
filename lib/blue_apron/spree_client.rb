@@ -236,7 +236,7 @@ module BlueApron
       end
 
       def setup_timeouts(request)
-        #request.options.timeout = 10
+        request.options.timeout = timeout
         request.options.open_timeout = timeout
       end
 
