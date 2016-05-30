@@ -236,7 +236,7 @@ module BlueApron
       end
 
       def setup_timeouts(request)
-        request.options.timeout = timeout
+        #request.options.timeout = 10
         request.options.open_timeout = timeout
       end
 
@@ -273,7 +273,7 @@ module BlueApron
       end
 
       def connection
-        Faraday.new(url: @url) do |faraday|
+        Faraday.new(:url => @url) do |faraday|
           faraday.request  :url_encoded
           faraday.adapter  Faraday.default_adapter
           if @logger
