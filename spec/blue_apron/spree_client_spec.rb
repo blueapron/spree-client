@@ -465,7 +465,29 @@ describe '#patch_order' do
     end
   end
 
-  describe '#get_taxons_by_slug' do
+  describe '#get_products_in_taxon' do
+    subject { spree_client.get_products_in_taxon(params) }
+
+    let(:params) { { id: 155 } }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.get('/api/taxons/products') do |env|
+          validate_json_request(env)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_taxons_products.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+
+      it "should contain products" do
+        expect(subject.products.count).to be(1)
+      end
+    end
+  end
+
+  describe '#get_taxons_by_permalink' do
     let(:permalink) { 'brand/ruby' }
 
     before do

@@ -134,6 +134,13 @@ module BlueApron
     end
 
     ##
+    # Get products in a specific taxon.
+    def get_products_in_taxon(taxon_id)
+      options = { params: { id: taxon_id } }
+      get "/api/taxons/products", options
+    end
+
+    ##
     # Return a taxon based on the permalink
     def get_taxons_by_permalink(permalink)
       taxonomies = get_taxonomies.taxonomies

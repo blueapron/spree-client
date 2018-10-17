@@ -1,0 +1,185 @@
+{
+  "count": 1,
+  "total_count": 1,
+  "current_page": 1,
+  "per_page": 25,
+  "pages": 1,
+  "products": [
+    {
+      "id": 433,
+      "name": "On Demand Master",
+      "description": "",
+      "price": "9.99",
+      "display_price": "$9.99",
+      "available_on": "2018-10-15T00:00:00.000Z",
+      "slug": "on-demand-master",
+      "meta_description": "",
+      "meta_keywords": "",
+      "shipping_category_id": 1,
+      "taxon_ids": [
+        153,
+        156
+      ],
+      "total_on_hand": 0,
+      "display_msrp": "$0.00",
+      "gift": false,
+      "uncollapsible_line_item": false,
+      "msrp": null,
+      "exclusive": false,
+      "is_recurrable": false,
+      "subtitle": "",
+      "presale": false,
+      "recurrable_text": "",
+      "cms_text": "",
+      "discontinue_on": null,
+      "has_variants": true,
+      "master": {
+        "id": 441,
+        "name": "On Demand Master",
+        "sku": "BAOD-STEAK-MASTER",
+        "price": "9.99",
+        "weight": "0.0",
+        "height": null,
+        "width": null,
+        "depth": null,
+        "is_master": true,
+        "cost_price": null,
+        "slug": "on-demand-master",
+        "description": "",
+        "track_inventory": true,
+        "display_price": "$9.99",
+        "options_text": "",
+        "in_stock": false,
+        "total_on_hand": 0,
+        "is_backorderable": true,
+        "is_destroyed": false,
+        "option_values": [],
+        "images": [
+          {
+            "id": 1395,
+            "position": 1,
+            "attachment_content_type": "image/jpeg",
+            "attachment_file_name": "steak_product.jpeg",
+            "type": "Spree::Image",
+            "attachment_updated_at": "2018-10-16T21:38:08.294Z",
+            "attachment_width": 616,
+            "attachment_height": 462,
+            "alt": "",
+            "viewable_type": "Spree::Variant",
+            "viewable_id": 441,
+            "mini_url": "https://media-sage.blueapron.com/market/app/public/spree/products/1395/mini/steak_product.jpeg?1539725888",
+            "small_url": "https://media-sage.blueapron.com/market/app/public/spree/products/1395/small/steak_product.jpeg?1539725888",
+            "product_url": "https://media-sage.blueapron.com/market/app/public/spree/products/1395/product/steak_product.jpeg?1539725888",
+            "large_url": "https://media-sage.blueapron.com/market/app/public/spree/products/1395/large/steak_product.jpeg?1539725888",
+            "xlarge_url": "https://media-sage.blueapron.com/market/app/public/spree/products/1395/xlarge/steak_product.jpeg?1539725888"
+          }
+        ]
+      },
+      "variants": [
+        {
+          "id": 442,
+          "name": "On Demand Master",
+          "sku": "BAOD-STEAK-VAR-MUNCHERY-CA-01",
+          "price": "30.99",
+          "weight": "0.0",
+          "height": null,
+          "width": null,
+          "depth": null,
+          "is_master": false,
+          "cost_price": null,
+          "slug": "on-demand-master",
+          "description": "",
+          "track_inventory": true,
+          "display_price": "$30.99",
+          "options_text": "Fulfillment Partner: Munchery - CA 01",
+          "in_stock": false,
+          "total_on_hand": 0,
+          "is_backorderable": true,
+          "is_destroyed": false,
+          "option_values": [
+            {
+              "id": 26,
+              "name": "munchery-ca-01",
+              "presentation": "Munchery - CA 01",
+              "option_type_name": "fulfillment-partner",
+              "option_type_id": 5,
+              "option_type_presentation": "Fulfillment Partner"
+            }
+          ],
+          "images": []
+        },
+        {
+          "id": 443,
+          "name": "On Demand Master",
+          "sku": "BAOD-STEAK-VAR-MUNCHERY-CA-02",
+          "price": "20.99",
+          "weight": "0.0",
+          "height": null,
+          "width": null,
+          "depth": null,
+          "is_master": false,
+          "cost_price": null,
+          "slug": "on-demand-master",
+          "description": "",
+          "track_inventory": true,
+          "display_price": "$20.99",
+          "options_text": "Fulfillment Partner: Munchery - CA 02",
+          "in_stock": false,
+          "total_on_hand": 0,
+          "is_backorderable": true,
+          "is_destroyed": false,
+          "option_values": [
+            {
+              "id": 27,
+              "name": "munchery-ca-02",
+              "presentation": "Munchery - CA 02",
+              "option_type_name": "fulfillment-partner",
+              "option_type_id": 5,
+              "option_type_presentation": "Fulfillment Partner"
+            }
+          ],
+          "images": []
+        }
+      ],
+      "option_types": [
+        {
+          "id": 5,
+          "name": "fulfillment-partner",
+          "presentation": "Fulfillment Partner",
+          "position": 0
+        }
+      ],
+      "product_properties": [],
+      "classifications": [
+        {
+          "taxon_id": 153,
+          "position": 2,
+          "taxon": {
+            "id": 153,
+            "name": "Munchery",
+            "pretty_name": "Fulfillment -> Munchery",
+            "permalink": "fulfillment/munchery",
+            "parent_id": 148,
+            "taxonomy_id": 4,
+            "description": null,
+            "taxons": []
+          }
+        },
+        {
+          "taxon_id": 156,
+          "position": 1,
+          "taxon": {
+            "id": 156,
+            "name": "Meals for 2",
+            "pretty_name": "On Demand -> Meals for 2",
+            "permalink": "on-demand/meals-for-2",
+            "parent_id": 155,
+            "taxonomy_id": 6,
+            "description": null,
+            "taxons": []
+          }
+        }
+      ]
+    }
+  ]
+}
