@@ -466,9 +466,9 @@ describe '#patch_order' do
   end
 
   describe '#get_products_in_taxon' do
-    subject { spree_client.get_products_in_taxon(params) }
+    subject { spree_client.get_products_in_taxon(taxon_id) }
 
-    let(:params) { { id: 155 } }
+    let(:taxon_id) { 155 }
 
     context 'when response is 200' do
       before(:each) do
