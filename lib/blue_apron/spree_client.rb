@@ -137,7 +137,11 @@ module BlueApron
     # Get products in a specific taxon.
     def get_products_in_taxon(taxon_id)
       options = { params: { id: taxon_id } }
-      get "/api/taxons/products", options
+      response = get "/api/taxons/products", options
+      response.products.each do |product|
+        sanitize_product!(product)
+      end
+      response
     end
 
     ##
