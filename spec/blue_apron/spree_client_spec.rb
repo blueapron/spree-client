@@ -241,9 +241,9 @@ describe BlueApron::SpreeClient do
 
   describe '#get_current_for_order' do
     let(:user_id) { 1234 }
-    let(:params) { {} }
+    let(:options) { {} }
 
-    subject { spree_client.get_current_order_for(user_id, params) }
+    subject { spree_client.get_current_order_for(user_id, options) }
 
     context 'when response is 200' do
       before(:each) do
@@ -268,6 +268,7 @@ describe BlueApron::SpreeClient do
       end
 
       let(:params) { { 'cart_type' => 'on_demand', 'payment' => 'your_soul' } }
+      let(:options) { { params: params } }
 
       it_behaves_like "a Hashie::Mash"
     end
@@ -616,7 +617,7 @@ describe '#patch_order' do
   end
 
   describe '#sanitize_product' do
-    let(:html_text) { '<h1>Hello World <script>alert("HACKED")</script></h1>' }
+    let(:html_text) { '<h1>Hello World<script>alert("HACKED")</script></h1>' }
     let(:product) { Hashie::Mash.new(cms_text: html_text, description: html_text, product_properties: product_properties) }
     let(:product_properties) { [Hashie::Mash.new(value: html_text)] }
 
@@ -624,7 +625,7 @@ describe '#patch_order' do
 
     it 'should remove <script> tags' do
       subject
-      cleaned = '<h1>Hello World alert("HACKED")</h1>'
+      cleaned = '<h1>Hello World</h1>'
       expect(product.cms_text).to eq(cleaned)
       expect(product.description).to eq(cleaned)
       expect(product.product_properties.first.value).to eq(cleaned)
@@ -633,10 +634,10 @@ describe '#patch_order' do
 
   describe '#sanitize_html' do
     subject { spree_client.send(:sanitize_html, html) }
-    let(:html) { '<h1>Hello World <script>alert("HACKED")</script></h1>' }
+    let(:html) { '<h1>Hello World<script>alert("HACKED")</script></h1>' }
 
     it 'should remove <script> tags' do
-      expect(subject).to eq('<h1>Hello World alert("HACKED")</h1>')
+      expect(subject).to eq('<h1>Hello World</h1>')
     end
   end
 

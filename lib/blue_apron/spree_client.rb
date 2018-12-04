@@ -108,7 +108,7 @@ module BlueApron
     end
 
     def get_current_order_for(user_id, options = {})
-      get "/api/orders/current_for/#{user_id}", params: options
+      get "/api/orders/current_for/#{user_id}", options
     end
 
     def get_orders(options = {})
