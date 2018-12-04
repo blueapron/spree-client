@@ -241,8 +241,9 @@ describe BlueApron::SpreeClient do
 
   describe '#get_current_for_order' do
     let(:user_id) { 1234 }
+    let(:params) { {} }
 
-    subject { spree_client.get_current_order_for(user_id) }
+    subject { spree_client.get_current_order_for(user_id, params) }
 
     context 'when response is 200' do
       before(:each) do
@@ -252,6 +253,21 @@ describe BlueApron::SpreeClient do
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
+
+      it_behaves_like "a Hashie::Mash"
+    end
+
+    context 'when parameters are provided' do
+      before(:each) do
+        stubs.get("/api/orders/current_for/#{user_id}") do |env|
+          validate_json_request(env)
+          expect(env[:params]).to eq(params)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      let(:params) { { 'cart_type' => 'on_demand', 'payment' => 'your_soul' } }
 
       it_behaves_like "a Hashie::Mash"
     end
