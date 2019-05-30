@@ -482,6 +482,30 @@ describe '#patch_order' do
     end
   end
 
+  describe '#get_homepage_products' do
+    subject { spree_client.get_homepage_products }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.get('/api/products/homepage') do |env|
+          validate_json_request(env)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_products_homepage.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+
+      it "should contain taxon keys" do
+        subject.keys.each { |key| expect(key).to be_a(String) }
+      end
+
+      it "should contain lists of products" do
+        subject.keys.each { |key| expect(subject[key]).to be_an(Array) }
+      end
+    end
+  end
+
   describe '#get_products_in_taxon' do
     subject { spree_client.get_products_in_taxon(taxon_id) }
 
