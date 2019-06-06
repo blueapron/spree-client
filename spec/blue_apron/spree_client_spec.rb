@@ -27,7 +27,7 @@ describe BlueApron::SpreeClient do
     expect(BlueApron::SpreeClient::VERSION).to_not be_nil
   end
 
-  after(:each) do
+  after do
     stubs.verify_stubbed_calls
   end
 
@@ -97,7 +97,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.get_country(id) }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.get("/api/countries/#{id}") do |env|
           validate_authenticated_request(env)
           [200, {}, read_fixture_file('get_api_country.json')]
@@ -116,7 +116,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.apply_coupon_code(order_number, coupon_code) }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.put("/api/orders/#{order_number}/apply_coupon_code") do |env|
           validate_authenticated_request(env)
           [200, {}, read_fixture_file('put_api_orders_apply_coupon_code.json')]
@@ -132,7 +132,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.get_taxon(1, 2) }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.get('/api/taxonomies/1/taxons/2') do |env|
           validate_json_request(env)
           [200, { 'Content-Type' => 'application/json' }, '{}']
@@ -158,7 +158,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.add_line_item(order_number, line_item) }
 
     context 'when response is 201' do
-      before(:each) do
+      before do
         stubs.post("/api/orders/#{order_number}/line_items") do |env|
           expect(env[:body]).to eq(line_item.to_json)
           validate_json_request(env)
@@ -186,7 +186,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.add_blue_apron_gift(order_number, line_item_id, blue_apron_gift) }
 
     context 'when response is 201' do
-      before(:each) do
+      before do
         stubs.post("/api/orders/#{order_number}/line_items/#{line_item_id}/blue_apron_gifts") do |env|
           expect(env[:body]).to eq(blue_apron_gift.to_json)
           validate_json_request(env)
@@ -212,7 +212,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.update_line_item(order_number, line_item_id, quantity) }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.put("/api/orders/#{order_number}/line_items/#{line_item_id}") do |env|
           expect(env[:body]).to eq({ line_item: { quantity: quantity } }.to_json)
           validate_json_request(env)
@@ -232,7 +232,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.delete_line_item(order_number, line_item_id) }
 
     context 'when response is 204' do
-      before(:each) do
+      before do
         stubs.delete("/api/orders/#{order_number}/line_items/#{line_item_id}") do |env|
           validate_json_request(env)
           [204, { 'Content-Type' => 'application/json' }, '']
@@ -253,7 +253,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.get_current_order_for(user_id, options) }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.get("/api/orders/current_for/#{user_id}") do |env|
           validate_json_request(env)
           [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_order.json')]
@@ -265,7 +265,7 @@ describe BlueApron::SpreeClient do
     end
 
     context 'when parameters are provided' do
-      before(:each) do
+      before do
         stubs.get("/api/orders/current_for/#{user_id}") do |env|
           validate_json_request(env)
           expect(env[:params]).to eq(params)
@@ -286,7 +286,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.get_order(order_number) }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.get("/api/orders/#{order_number}") do |env|
           validate_json_request(env)
           [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_order.json')]
@@ -304,7 +304,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.get_orders(params) }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.get('/api/orders') do |env|
           validate_json_request(env)
           [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_orders.json')]
@@ -322,7 +322,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.get_orders_for(1) }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.get('/api/orders') do |env|
           validate_json_request(env)
           [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_orders.json')]
@@ -340,7 +340,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.patch_order_key_value(order_number, 'foo', 'bar') }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.patch("/api/orders/#{order_number}") do |env|
           validate_json_request(env)
           expect(env[:body]).to eq({ order: { 'foo' => 'bar' } }.to_json)
@@ -367,7 +367,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.patch_order(order_number, order) }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.patch("/api/orders/#{order_number}") do |env|
           validate_json_request(env)
           expect(env[:body]).to eq(order.to_json)
@@ -394,7 +394,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.update_order(order_number, order) }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.put("/api/orders/#{order_number}") do |env|
           validate_json_request(env)
           expect(env[:body]).to eq(order.to_json)
@@ -415,7 +415,7 @@ describe BlueApron::SpreeClient do
       subject { spree_client.send(method, id) }
 
       context 'when response is 200' do
-        before(:each) do
+        before do
           stubs.put("/api/checkouts/#{id}/#{method}") do |env|
             validate_json_request(env)
             [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_order.json')]
@@ -434,7 +434,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.empty_order(id) }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.put("/api/orders/#{id}/empty") do |env|
           validate_json_request(env)
           [200, { 'Content-Type' => 'application/json' }, '']
@@ -453,7 +453,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.get_product(id) }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.get("/api/products/#{id}") do |env|
           validate_json_request(env)
           [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_product.json')]
@@ -471,7 +471,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.get_products(params) }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.get('/api/products') do |env|
           validate_json_request(env)
           [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_products.json')]
@@ -493,7 +493,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.get_homepage_products }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.get('/api/products/homepage') do |env|
           validate_json_request(env)
           [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_products_homepage.json')]
@@ -519,7 +519,7 @@ describe BlueApron::SpreeClient do
     let(:taxon_id) { 155 }
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.get('/api/taxons/products') do |env|
           validate_json_request(env)
           [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_taxons_products.json')]
@@ -559,7 +559,7 @@ describe BlueApron::SpreeClient do
     subject { spree_client.get_taxonomies }
 
     context 'when response is not 200' do
-      before(:each) do
+      before do
         stubs.get('/api/taxonomies') do |_env|
           [500, {}, 'ERROR']
         end
@@ -572,7 +572,7 @@ describe BlueApron::SpreeClient do
     end
 
     context 'when response is 200' do
-      before(:each) do
+      before do
         stubs.get('/api/taxonomies') do |env|
           validate_json_request(env)
           [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_taxonomies.json')]
