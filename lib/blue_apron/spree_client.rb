@@ -133,6 +133,14 @@ module BlueApron
       response
     end
 
+    def get_homepage_products
+      response = get "/api/products/homepage"
+      response.each do |_key, products|
+        products.each { |product| sanitize_product!(product) }
+      end
+      response
+    end
+
     ##
     # Get products in a specific taxon.
     def get_products_in_taxon(taxon_id)
