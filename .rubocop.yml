@@ -1,0 +1,15 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - 'Gemfile'
+    - 'Rakefile'
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Style/Documentation:
+  Enabled: False

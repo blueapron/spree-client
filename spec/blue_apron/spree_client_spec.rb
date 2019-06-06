@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe BlueApron::SpreeClient do
@@ -35,15 +37,15 @@ describe BlueApron::SpreeClient do
     end
   end
 
-  shared_examples "a paginated response" do
+  shared_examples 'a paginated response' do
     it 'should contain pagination' do
-      expect(subject[:count]).to be_a(Fixnum)
-      expect(subject.current_page).to be_a(Fixnum)
-      expect(subject.pages).to be_a(Fixnum)
+      expect(subject[:count]).to be_a(Integer)
+      expect(subject.current_page).to be_a(Integer)
+      expect(subject.pages).to be_a(Integer)
     end
   end
 
-  shared_examples "an order" do
+  shared_examples 'an order' do
     it 'should have checkout steps' do
       expect(subject.checkout_steps.size).to_not eq(0)
     end
@@ -103,13 +105,13 @@ describe BlueApron::SpreeClient do
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
     end
   end
 
   describe '#apply_coupon_code' do
     let(:order_number) { 'R1234' }
-    let(:coupon_code) { "FRED" }
+    let(:coupon_code) { 'FRED' }
 
     subject { spree_client.apply_coupon_code(order_number, coupon_code) }
 
@@ -122,7 +124,7 @@ describe BlueApron::SpreeClient do
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
     end
   end
 
@@ -131,14 +133,14 @@ describe BlueApron::SpreeClient do
 
     context 'when response is 200' do
       before(:each) do
-        stubs.get("/api/taxonomies/1/taxons/2") do |env|
+        stubs.get('/api/taxonomies/1/taxons/2') do |env|
           validate_json_request(env)
-          [200, {'Content-Type' => 'application/json'}, "{}"]
+          [200, { 'Content-Type' => 'application/json' }, '{}']
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
     end
   end
 
@@ -160,12 +162,12 @@ describe BlueApron::SpreeClient do
         stubs.post("/api/orders/#{order_number}/line_items") do |env|
           expect(env[:body]).to eq(line_item.to_json)
           validate_json_request(env)
-          [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders_line_items.json')]
+          [201, { 'Content-Type' => 'application/json' }, read_fixture_file('post_api_orders_line_items.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
     end
   end
 
@@ -175,8 +177,8 @@ describe BlueApron::SpreeClient do
     let(:blue_apron_gift) do
       {
         blue_apron_gift: {
-          sender_first_name: "Fred",
-          sender_last_name: "McSun"
+          sender_first_name: 'Fred',
+          sender_last_name: 'McSun'
         }
       }
     end
@@ -188,12 +190,17 @@ describe BlueApron::SpreeClient do
         stubs.post("/api/orders/#{order_number}/line_items/#{line_item_id}/blue_apron_gifts") do |env|
           expect(env[:body]).to eq(blue_apron_gift.to_json)
           validate_json_request(env)
-          [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders_line_items_blue_apron_gifts.json')]
+          [
+            201,
+            { 'Content-Type' => 'application/json' },
+            read_fixture_file('post_api_orders_line_items_blue_apron_gifts.json')
+          ]
         end
+
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
     end
   end
 
@@ -207,14 +214,14 @@ describe BlueApron::SpreeClient do
     context 'when response is 200' do
       before(:each) do
         stubs.put("/api/orders/#{order_number}/line_items/#{line_item_id}") do |env|
-          expect(env[:body]).to eq({line_item: {quantity: quantity}}.to_json)
+          expect(env[:body]).to eq({ line_item: { quantity: quantity } }.to_json)
           validate_json_request(env)
-          [200, {'Content-Type' => 'application/json'}, read_fixture_file('put_api_orders_line_items.json')]
+          [200, { 'Content-Type' => 'application/json' }, read_fixture_file('put_api_orders_line_items.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
     end
   end
 
@@ -228,7 +235,7 @@ describe BlueApron::SpreeClient do
       before(:each) do
         stubs.delete("/api/orders/#{order_number}/line_items/#{line_item_id}") do |env|
           validate_json_request(env)
-          [204, {'Content-Type' => 'application/json'}, ""]
+          [204, { 'Content-Type' => 'application/json' }, '']
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
@@ -249,12 +256,12 @@ describe BlueApron::SpreeClient do
       before(:each) do
         stubs.get("/api/orders/current_for/#{user_id}") do |env|
           validate_json_request(env)
-          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+          [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_order.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
     end
 
     context 'when parameters are provided' do
@@ -262,7 +269,7 @@ describe BlueApron::SpreeClient do
         stubs.get("/api/orders/current_for/#{user_id}") do |env|
           validate_json_request(env)
           expect(env[:params]).to eq(params)
-          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+          [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_order.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
@@ -270,7 +277,7 @@ describe BlueApron::SpreeClient do
       let(:params) { { 'cart_type' => 'on_demand', 'payment' => 'your_soul' } }
       let(:options) { { params: params } }
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
     end
   end
 
@@ -282,12 +289,12 @@ describe BlueApron::SpreeClient do
       before(:each) do
         stubs.get("/api/orders/#{order_number}") do |env|
           validate_json_request(env)
-          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+          [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_order.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
     end
   end
 
@@ -298,14 +305,14 @@ describe BlueApron::SpreeClient do
 
     context 'when response is 200' do
       before(:each) do
-        stubs.get("/api/orders") do |env|
+        stubs.get('/api/orders') do |env|
           validate_json_request(env)
-          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_orders.json')]
+          [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_orders.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
     end
   end
 
@@ -316,38 +323,38 @@ describe BlueApron::SpreeClient do
 
     context 'when response is 200' do
       before(:each) do
-        stubs.get("/api/orders") do |env|
+        stubs.get('/api/orders') do |env|
           validate_json_request(env)
-          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_orders.json')]
+          [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_orders.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
     end
   end
 
   describe '#patch_order_key_value' do
     let(:order_number) { 'R1234' }
 
-    subject { spree_client.patch_order_key_value(order_number, "foo", "bar") }
+    subject { spree_client.patch_order_key_value(order_number, 'foo', 'bar') }
 
     context 'when response is 200' do
       before(:each) do
         stubs.patch("/api/orders/#{order_number}") do |env|
           validate_json_request(env)
-          expect(env[:body]).to eq({:order => {'foo' => 'bar'}}.to_json)
-          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+          expect(env[:body]).to eq({ order: { 'foo' => 'bar' } }.to_json)
+          [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_order.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
-      it_behaves_like "an order"
+      it_behaves_like 'a Hashie::Mash'
+      it_behaves_like 'an order'
     end
   end
 
-describe '#patch_order' do
+  describe '#patch_order' do
     let(:order_number) { 'R1234' }
     let(:order) do
       {
@@ -364,13 +371,13 @@ describe '#patch_order' do
         stubs.patch("/api/orders/#{order_number}") do |env|
           validate_json_request(env)
           expect(env[:body]).to eq(order.to_json)
-          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+          [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_order.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
-      it_behaves_like "an order"
+      it_behaves_like 'a Hashie::Mash'
+      it_behaves_like 'an order'
     end
   end
 
@@ -391,18 +398,18 @@ describe '#patch_order' do
         stubs.put("/api/orders/#{order_number}") do |env|
           validate_json_request(env)
           expect(env[:body]).to eq(order.to_json)
-          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+          [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_order.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
-      it_behaves_like "an order"
+      it_behaves_like 'a Hashie::Mash'
+      it_behaves_like 'an order'
     end
   end
 
-  [:next, :advance].each do |method|
-    describe "#{method}" do
+  %i[next advance].each do |method|
+    describe method.to_s do
       let(:id) { 'R1234' }
 
       subject { spree_client.send(method, id) }
@@ -411,13 +418,13 @@ describe '#patch_order' do
         before(:each) do
           stubs.put("/api/checkouts/#{id}/#{method}") do |env|
             validate_json_request(env)
-            [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_order.json')]
+            [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_order.json')]
           end
           expect(spree_client).to receive(:connection).and_return(connection)
         end
 
-        it_behaves_like "a Hashie::Mash"
-        it_behaves_like "an order"
+        it_behaves_like 'a Hashie::Mash'
+        it_behaves_like 'an order'
       end
     end
   end
@@ -430,7 +437,7 @@ describe '#patch_order' do
       before(:each) do
         stubs.put("/api/orders/#{id}/empty") do |env|
           validate_json_request(env)
-          [200, {'Content-Type' => 'application/json'}, ""]
+          [200, { 'Content-Type' => 'application/json' }, '']
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
@@ -449,12 +456,12 @@ describe '#patch_order' do
       before(:each) do
         stubs.get("/api/products/#{id}") do |env|
           validate_json_request(env)
-          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_product.json')]
+          [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_product.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
     end
   end
 
@@ -467,16 +474,16 @@ describe '#patch_order' do
       before(:each) do
         stubs.get('/api/products') do |env|
           validate_json_request(env)
-          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_products.json')]
+          [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_products.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
 
-      it_behaves_like "a paginated response"
+      it_behaves_like 'a paginated response'
 
-      it "should contain products" do
+      it 'should contain products' do
         expect(subject.products).to be_a(Array)
       end
     end
@@ -489,18 +496,18 @@ describe '#patch_order' do
       before(:each) do
         stubs.get('/api/products/homepage') do |env|
           validate_json_request(env)
-          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_products_homepage.json')]
+          [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_products_homepage.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
 
-      it "should contain taxon keys" do
+      it 'should contain taxon keys' do
         subject.keys.each { |key| expect(key).to be_a(String) }
       end
 
-      it "should contain lists of products" do
+      it 'should contain lists of products' do
         subject.keys.each { |key| expect(subject[key]).to be_an(Array) }
       end
     end
@@ -515,14 +522,14 @@ describe '#patch_order' do
       before(:each) do
         stubs.get('/api/taxons/products') do |env|
           validate_json_request(env)
-          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_taxons_products.json')]
+          [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_taxons_products.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
 
-      it "should contain products" do
+      it 'should contain products' do
         expect(subject.products.count).to be(1)
       end
     end
@@ -532,7 +539,9 @@ describe '#patch_order' do
     let(:permalink) { 'brand/ruby' }
 
     before do
-      expect(spree_client).to receive(:get_taxonomies).and_return(Hashie::Mash.new(JSON.parse(read_fixture_file('get_api_taxonomies.json'))))
+      expect(spree_client)
+        .to receive(:get_taxonomies)
+        .and_return(Hashie::Mash.new(JSON.parse(read_fixture_file('get_api_taxonomies.json'))))
     end
 
     subject { spree_client.get_taxons_by_permalink(permalink) }
@@ -551,16 +560,14 @@ describe '#patch_order' do
 
     context 'when response is not 200' do
       before(:each) do
-        stubs.get('/api/taxonomies') do |env|
-          [500, {}, "ERROR"]
+        stubs.get('/api/taxonomies') do |_env|
+          [500, {}, 'ERROR']
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
       it 'should raise error' do
-        expect {
-          subject
-        }.to raise_error(BlueApron::SpreeClient::ApiError)
+        expect { subject }.to raise_error(BlueApron::SpreeClient::ApiError)
       end
     end
 
@@ -568,14 +575,14 @@ describe '#patch_order' do
       before(:each) do
         stubs.get('/api/taxonomies') do |env|
           validate_json_request(env)
-          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_taxonomies.json')]
+          [200, { 'Content-Type' => 'application/json' }, read_fixture_file('get_api_taxonomies.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
-      it_behaves_like "a Hashie::Mash"
+      it_behaves_like 'a Hashie::Mash'
 
-      it_behaves_like "a paginated response"
+      it_behaves_like 'a paginated response'
 
       it 'should contain taxonomies' do
         expect(subject.taxonomies).to be_a(Array)
@@ -583,8 +590,8 @@ describe '#patch_order' do
 
       it 'should contain taxons in taxonomies' do
         taxonomies = subject.taxonomies
-        expect(taxonomies.first.name).to eq("Brand")
-        expect(taxonomies.first.root.taxons.first.name).to eq("Ruby")
+        expect(taxonomies.first.name).to eq('Brand')
+        expect(taxonomies.first.root.taxons.first.name).to eq('Ruby')
       end
     end
   end
@@ -604,15 +611,15 @@ describe '#patch_order' do
           expect(env[:body]).to be_empty
           expect(env[:request_headers]['Content-Type']).to be_nil
           expect(env[:request_headers]['X-Spree-Token']).to eq(api_key)
-          [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders.json')]
+          [201, { 'Content-Type' => 'application/json' }, read_fixture_file('post_api_orders.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
       subject { spree_client.create_order }
 
-      it_behaves_like "a Hashie::Mash"
-      it_behaves_like "an order"
+      it_behaves_like 'a Hashie::Mash'
+      it_behaves_like 'an order'
 
       it 'should have an id' do
         expect(subject.id).to eq(30)
@@ -624,15 +631,15 @@ describe '#patch_order' do
         stubs.post('/api/orders') do |env|
           expect(env[:body]).to eq(order.to_json)
           validate_json_request(env)
-          [201, {'Content-Type' => 'application/json'}, read_fixture_file('post_api_orders.json')]
+          [201, { 'Content-Type' => 'application/json' }, read_fixture_file('post_api_orders.json')]
         end
         expect(spree_client).to receive(:connection).and_return(connection)
       end
 
       subject { spree_client.create_order(order: order) }
 
-      it_behaves_like "a Hashie::Mash"
-      it_behaves_like "an order"
+      it_behaves_like 'a Hashie::Mash'
+      it_behaves_like 'an order'
 
       it 'should have an id' do
         expect(subject.id).to eq(30)
@@ -642,7 +649,9 @@ describe '#patch_order' do
 
   describe '#sanitize_product' do
     let(:html_text) { '<h1>Hello World<script>alert("HACKED")</script></h1>' }
-    let(:product) { Hashie::Mash.new(cms_text: html_text, description: html_text, product_properties: product_properties) }
+    let(:product) do
+      Hashie::Mash.new(cms_text: html_text, description: html_text, product_properties: product_properties)
+    end
     let(:product_properties) { [Hashie::Mash.new(value: html_text)] }
 
     subject { spree_client.send(:sanitize_product!, product) }
@@ -667,33 +676,33 @@ describe '#patch_order' do
 
   private
 
-    def with_faraday_stub
-      connection = Faraday.new do |builder|
-        builder.adapter :test do |stubs|
-          yield stub
-          @stubs = stubs
-        end
+  def with_faraday_stub
+    connection = Faraday.new do |builder|
+      builder.adapter :test do |stubs|
+        yield stub
+        @stubs = stubs
       end
-      expect(spree_client).to receive(:connection).and_return(connection)
     end
+    expect(spree_client).to receive(:connection).and_return(connection)
+  end
 
-    def validate_json_request(env)
-      expect(env[:request_headers]['Accept']).to eq('application/json')
-      expect(env[:request_headers]['Content-Type']).to eq('application/json')
-      validate_authenticated_request(env)
-    end
+  def validate_json_request(env)
+    expect(env[:request_headers]['Accept']).to eq('application/json')
+    expect(env[:request_headers]['Content-Type']).to eq('application/json')
+    validate_authenticated_request(env)
+  end
 
-    def validate_authenticated_request(env)
-      expect(env[:request_headers]['X-Spree-Token']).to eq(api_key)
-    end
+  def validate_authenticated_request(env)
+    expect(env[:request_headers]['X-Spree-Token']).to eq(api_key)
+  end
 
-    def read_fixture_file(file_name)
-      content = ""
-      File.open("#{File.dirname(__FILE__)}/../fixtures/#{file_name}", "r") do |f|
-        f.each_line do |line|
-          content += line
-        end
+  def read_fixture_file(file_name)
+    content = ''
+    File.open("#{File.dirname(__FILE__)}/../fixtures/#{file_name}", 'r') do |f|
+      f.each_line do |line|
+        content += line
       end
-      content
     end
+    content
+  end
 end

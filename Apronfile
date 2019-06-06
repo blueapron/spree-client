@@ -1,0 +1,16 @@
+version: '5'
+preset:
+  type: library
+  language: ruby
+  package: spree-client
+environment_files:
+  test:
+    - env/test.env
+pipeline:
+  build:
+    arguments:
+      - GEMFURY_TOKEN
+  test:
+    suites:
+      - name: integration
+        command: bundle exec rspec --format Fuubar

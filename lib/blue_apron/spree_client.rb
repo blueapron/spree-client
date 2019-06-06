@@ -1,4 +1,4 @@
-require_relative '../blue_apron'
+# frozen_string_literal: true
 
 require 'sanitize'
 require 'faraday'
@@ -19,11 +19,11 @@ module BlueApron
     end
 
     def get_variant_stock(variant_id, stock_location_id = 1)
-      get "/api/stock_locations/#{stock_location_id}/stock_items", params: {'q[variant_id_eq]' => variant_id}
+      get "/api/stock_locations/#{stock_location_id}/stock_items", params: { 'q[variant_id_eq]' => variant_id }
     end
 
     def get_countries
-      get "/api/countries"
+      get '/api/countries'
     end
 
     def get_country(id)
@@ -64,7 +64,7 @@ module BlueApron
     end
 
     def update_line_item(order_id, line_item_id, quantity, options = {})
-      options[:body] = {line_item: {quantity: quantity}}.to_json
+      options[:body] = { line_item: { quantity: quantity } }.to_json
       put "/api/orders/#{order_id}/line_items/#{line_item_id}", options
     end
 
@@ -77,11 +77,11 @@ module BlueApron
     end
 
     def apply_coupon_code(id, coupon_code)
-      put "/api/orders/#{id}/apply_coupon_code", params: {coupon_code: coupon_code}
+      put "/api/orders/#{id}/apply_coupon_code", params: { coupon_code: coupon_code }
     end
 
     def patch_order_key_value(id, key, value, options = {})
-      options[:body] = { :order => {key => value} }.to_json
+      options[:body] = { order: { key => value } }.to_json
       patch "/api/orders/#{id}", options
     end
 
@@ -112,11 +112,18 @@ module BlueApron
     end
 
     def get_orders(options = {})
-      get "/api/orders", options
+      get '/api/orders', options
     end
 
-    def get_orders_for(user_id, state = ['confirm', 'complete', 'returned'], page = 1)
-      get_orders({params: {'q[blue_apron_user_id_eq]' => user_id, 'q[state_in]' => state, 'q[s]' => 'completed_at desc', page: page}})
+    def get_orders_for(user_id, state = %w[confirm complete returned], page = 1)
+      get_orders(
+        params: {
+          'q[blue_apron_user_id_eq]' => user_id,
+          'q[state_in]' => state,
+          'q[s]' => 'completed_at desc',
+          page: page
+        }
+      )
     end
 
     def get_product(id)
@@ -126,7 +133,7 @@ module BlueApron
     end
 
     def get_products(options = {})
-      response = get "/api/products", options
+      response = get '/api/products', options
       response.products.each do |product|
         sanitize_product!(product)
       end
@@ -134,7 +141,7 @@ module BlueApron
     end
 
     def get_homepage_products
-      response = get "/api/products/homepage"
+      response = get '/api/products/homepage'
       response.each do |_key, products|
         products.each { |product| sanitize_product!(product) }
       end
@@ -145,7 +152,7 @@ module BlueApron
     # Get products in a specific taxon.
     def get_products_in_taxon(taxon_id)
       options = { params: { id: taxon_id } }
-      response = get "/api/taxons/products", options
+      response = get '/api/taxons/products', options
       response.products.each do |product|
         sanitize_product!(product)
       end
@@ -166,7 +173,7 @@ module BlueApron
     ##
     # Get a list of taxonomies and taxons.
     def get_taxonomies(options = {})
-      get "/api/taxonomies", options
+      get '/api/taxonomies', options
     end
 
     ##
@@ -179,7 +186,7 @@ module BlueApron
     # Create a Spree::Order.
     def create_order(options = {})
       response = connection.post do |request|
-        request.url "/api/orders"
+        request.url '/api/orders'
         if options[:order]
           request.body = options[:order].to_json if options[:order]
           setup_authenticated_json_request(request)
@@ -199,14 +206,12 @@ module BlueApron
       def initialize(status, body)
         @status = status
         @body = body
+      end
 
-        def errors
-          if @status == 422
-            Hashie::Mash.new JSON.parse(@body)
-          else
-            nil
-          end
-        end
+      def errors
+        return [] unless @status == 422
+
+        Hashie::Mash.new JSON.parse(@body)
       end
     end
 
@@ -215,104 +220,98 @@ module BlueApron
 
     private
 
-      def get(url, options = {})
-        response = connection.get do |request|
-          request.url url
-          request.params = options[:params] if options[:params]
-          setup_timeouts(request)
-          setup_authenticated_json_request(request, options)
-        end
-        handle_response(response)
+    def get(url, options = {})
+      response = connection.get do |request|
+        request.url url
+        request.params = options[:params] if options[:params]
+        setup_timeouts(request)
+        setup_authenticated_json_request(request, options)
       end
+      handle_response(response)
+    end
 
-      def post(url, options = {})
-        response = connection.post do |request|
-          request.url url
-          request.body = options[:body] if options[:body]
-          setup_timeouts(request)
-          setup_authenticated_json_request(request)
-        end
-        handle_response(response)
+    def post(url, options = {})
+      response = connection.post do |request|
+        request.url url
+        request.body = options[:body] if options[:body]
+        setup_timeouts(request)
+        setup_authenticated_json_request(request)
       end
+      handle_response(response)
+    end
 
-      def patch(url, options = {})
-        perform_http_action :patch, url, options
+    def patch(url, options = {})
+      perform_http_action :patch, url, options
+    end
+
+    def put(url, options = {})
+      perform_http_action :put, url, options
+    end
+
+    def perform_http_action(verb, url, options = {})
+      response = connection.send(verb) do |request|
+        request.url url
+        request.body = options[:body] if options[:body]
+        request.params = options[:params] if options[:params]
+        setup_timeouts(request)
+        setup_authenticated_json_request(request)
       end
+      handle_response(response)
+    end
 
-      def put(url, options = {})
-        perform_http_action :put, url, options
+    def setup_timeouts(request)
+      # request.options.timeout = timeout
+      request.options.open_timeout = timeout
+    end
+
+    def timeout
+      @timeout || 4
+    end
+
+    def setup_authenticated_request(request, options = {})
+      if options[:order_token]
+        request.headers['X-Spree-Order-Token'] = options[:order_token]
+      else
+        request.headers['X-Spree-Token'] = @api_key
       end
+    end
 
-      def perform_http_action(verb, url, options = {})
-        response = connection.send(verb) do |request|
-          request.url url
-          request.body = options[:body] if options[:body]
-          request.params = options[:params] if options[:params]
-          setup_timeouts(request)
-          setup_authenticated_json_request(request)
-        end
-        handle_response(response)
+    def setup_authenticated_json_request(request, options = {})
+      setup_authenticated_request(request, options)
+
+      request.headers['Content-Type'] = 'application/json'
+      request.headers['Accept'] = 'application/json'
+    end
+
+    def handle_response(response)
+      raise ApiNotFoundError.new(404, response.body) if response.status == 404
+      raise ApiError.new(response.status, response.body) unless [200, 201, 204].include?(response.status)
+
+      return true if response.status == 204 || response.body&.empty?
+
+      Hashie::Mash.new JSON.parse(response.body)
+    end
+
+    def connection
+      Faraday.new(url: @url) do |faraday|
+        faraday.request :url_encoded
+        faraday.use(Faraday::Response::Logger, @logger) if @logger
+        faraday.adapter Faraday.default_adapter
       end
+    end
 
-      def setup_timeouts(request)
-        # request.options.timeout = timeout
-        request.options.open_timeout = timeout
+    ##
+    # Clean up HTML in known sections where HTML markup is being inserted in Spree.
+    def sanitize_product!(product)
+      product.cms_text = sanitize_html(product.cms_text)
+      product.description = sanitize_html(product.description)
+      product.product_properties&.each do |pp|
+        pp.value = sanitize_html(pp.value)
       end
+    end
 
-      def timeout
-        @timeout || 4
-      end
-
-      def setup_authenticated_request(request, options = {})
-        if options[:order_token]
-          request.headers['X-Spree-Order-Token'] = options[:order_token]
-        else
-          request.headers['X-Spree-Token'] = @api_key
-        end
-      end
-
-      def setup_authenticated_json_request(request, options = {})
-        setup_authenticated_request(request, options)
-
-        request.headers['Content-Type'] = 'application/json'
-        request.headers['Accept'] = 'application/json'
-      end
-
-      def handle_response(response)
-        raise ApiNotFoundError.new(404, response.body) if response.status == 404
-        raise ApiError.new(response.status, response.body) unless [200, 201, 204].include?(response.status)
-
-        if response.status == 204
-          true
-        elsif response.body && !response.body.empty?
-          Hashie::Mash.new JSON.parse(response.body)
-        else
-          true
-        end
-      end
-
-      def connection
-        Faraday.new(:url => @url) do |faraday|
-          faraday.request  :url_encoded
-          faraday.adapter  Faraday.default_adapter
-          if @logger
-            faraday.use      Faraday::Response::Logger, @logger
-          end
-        end
-      end
-
-      ##
-      # Clean up HTML in known sections where HTML markup is being inserted in Spree.
-      def sanitize_product!(product)
-        product.cms_text = sanitize_html(product.cms_text)
-        product.description = sanitize_html(product.description)
-        product.product_properties.each do |pp|
-          pp.value = sanitize_html(pp.value)
-        end unless product.product_properties.nil?
-      end
-
-      def sanitize_html(s)
-        Sanitize.fragment(s, Sanitize::Config::RELAXED)
-      end
+    def sanitize_html(str)
+      Sanitize.fragment(str, Sanitize::Config::RELAXED)
+    end
   end
 end
