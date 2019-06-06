@@ -3,8 +3,7 @@
 ## Setup
 
 * Clone the repo
-* `rbenv install 2.2.2`
-* `rbenv local 2.2.2; rbenv rehash`
+* `rbenv install 2.5.5`
 * `bundle install`
 
 ## Commands
