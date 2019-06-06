@@ -135,10 +135,8 @@ module BlueApron
 
     def get_homepage_products
       response = get "/api/products/homepage"
-      response.keys.each do |key|
-        response[key].each do |product|
-          sanitize_product!(product)
-        end
+      response.each do |_key, products|
+        products.each { |product| sanitize_product!(product) }
       end
       response
     end
