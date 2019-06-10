@@ -125,6 +125,12 @@ module BlueApron
       product
     end
 
+    def get_product_by_sku(sku)
+      product = get "/api/products/sku/#{sku}"
+      sanitize_product!(product)
+      product
+    end
+
     def get_products(options = {})
       response = get "/api/products", options
       response.products.each do |product|
