@@ -1,0 +1,141 @@
+{
+  "id": 186,
+  "name": "12.5\" Scanpan CTX Nonstick Skillet",
+  "description": "Yes, there is such a thing as the perfect pan: nonstick, never scratches, oven-safe to 500 degrees and lasts forever. \n<br> <br> \nWhether you’re cooking something that requires a delicate touch—think over-easy eggs, seared salmon and paper-thin crepes—or searing big, juicy steaks over high heat, Scanpan defies every conventional assumption made about traditional nonstick cookware. Its smooth, toxic-free cooking surface makes cooking and cleaning a breeze, and it browns, braises, and deglazes like professional cookware—but all on a coated surface so strong, it stands up even to harsh metal utensils. The Scanpan is probably the last pan you’ll ever buy.",
+  "price": "129.99",
+  "display_price": "$129.99",
+  "available_on": "2016-06-23T00:00:00.000Z",
+  "slug": "12-5-toxic-free-ctx-nonstick-pan-family-plan",
+  "meta_description": "",
+  "meta_keywords": "",
+  "shipping_category_id": 1,
+  "taxon_ids": [
+    134
+  ],
+  "total_on_hand": 222,
+  "has_variants": false,
+  "master": {
+    "id": 190,
+    "name": "12.5\" Scanpan CTX Nonstick Skillet",
+    "sku": "65003203",
+    "price": "129.99",
+    "weight": "0.0",
+    "height": null,
+    "width": null,
+    "depth": null,
+    "is_master": true,
+    "cost_price": null,
+    "slug": "12-5-toxic-free-ctx-nonstick-pan-family-plan",
+    "description": "Yes, there is such a thing as the perfect pan: nonstick, never scratches, oven-safe to 500 degrees and lasts forever. \r\n<br> <br> \r\nWhether you’re cooking something that requires a delicate touch—think over-easy eggs, seared salmon and paper-thin crepes—or searing big, juicy steaks over high heat, Scanpan defies every conventional assumption made about traditional nonstick cookware. Its smooth, toxic-free cooking surface makes cooking and cleaning a breeze, and it browns, braises, and deglazes like professional cookware—but all on a coated surface so strong, it stands up even to harsh metal utensils. The Scanpan is probably the last pan you’ll ever buy.",
+    "track_inventory": true,
+    "display_price": "$129.99",
+    "options_text": "",
+    "in_stock": true,
+    "total_on_hand": 222,
+    "is_backorderable": true,
+    "is_destroyed": false,
+    "option_values": [
+
+    ],
+    "images": [
+      {
+        "id": 857,
+        "position": 0,
+        "attachment_content_type": "image/jpeg",
+        "attachment_file_name": "12.5IN_scanpan_10071.jpg",
+        "type": "Spree::Image",
+        "attachment_updated_at": "2017-05-16T19:00:39.985Z",
+        "attachment_width": 1200,
+        "attachment_height": 1200,
+        "alt": "",
+        "viewable_type": "Spree::Variant",
+        "viewable_id": 190,
+        "mini_url": "/spree/products/857/mini/12.5IN_scanpan_10071.jpg?1494961239",
+        "small_url": "/spree/products/857/small/12.5IN_scanpan_10071.jpg?1494961239",
+        "product_url": "/spree/products/857/product/12.5IN_scanpan_10071.jpg?1494961239",
+        "large_url": "/spree/products/857/large/12.5IN_scanpan_10071.jpg?1494961239"
+      },
+      {
+        "id": 858,
+        "position": 1,
+        "attachment_content_type": "image/jpeg",
+        "attachment_file_name": "12.5IN_Scan_Pan_2_1554.jpg",
+        "type": "Spree::Image",
+        "attachment_updated_at": "2017-05-16T19:00:53.384Z",
+        "attachment_width": 1200,
+        "attachment_height": 1200,
+        "alt": "",
+        "viewable_type": "Spree::Variant",
+        "viewable_id": 190,
+        "mini_url": "/spree/products/858/mini/12.5IN_Scan_Pan_2_1554.jpg?1494961253",
+        "small_url": "/spree/products/858/small/12.5IN_Scan_Pan_2_1554.jpg?1494961253",
+        "product_url": "/spree/products/858/product/12.5IN_Scan_Pan_2_1554.jpg?1494961253",
+        "large_url": "/spree/products/858/large/12.5IN_Scan_Pan_2_1554.jpg?1494961253"
+      },
+      {
+        "id": 859,
+        "position": 2,
+        "attachment_content_type": "image/jpeg",
+        "attachment_file_name": "12.5IN_Scan_Pan_2_1550.jpg",
+        "type": "Spree::Image",
+        "attachment_updated_at": "2017-05-16T19:01:03.962Z",
+        "attachment_width": 1200,
+        "attachment_height": 1200,
+        "alt": "",
+        "viewable_type": "Spree::Variant",
+        "viewable_id": 190,
+        "mini_url": "/spree/products/859/mini/12.5IN_Scan_Pan_2_1550.jpg?1494961263",
+        "small_url": "/spree/products/859/small/12.5IN_Scan_Pan_2_1550.jpg?1494961263",
+        "product_url": "/spree/products/859/product/12.5IN_Scan_Pan_2_1550.jpg?1494961263",
+        "large_url": "/spree/products/859/large/12.5IN_Scan_Pan_2_1550.jpg?1494961263"
+      }
+    ]
+  },
+  "variants": [
+
+  ],
+  "option_types": [
+
+  ],
+  "product_properties": [
+    {
+      "id": 434,
+      "product_id": 186,
+      "property_id": 12,
+      "value": "<ul style=\"list-style-type:disc\"> <li>12.5\" nonstick fry pan</li> <li>100% recycled aluminum body and stainless-steel handle</li> <li>100% PFOA-free, Green Tek nonstick cooking surface</li> <li> For use on all stove-tops including induction</li> <li>For use with metal utensils</li> <li>Oven safe to 500 degrees Fahrenheit </li> <li>Dishwasher safe</li> <li>Made in Denmark</li> <li>Produced by Scanpan</li> </ul>",
+      "property_name": "Product Details"
+    },
+    {
+      "id": 435,
+      "product_id": 186,
+      "property_id": 13,
+      "value": "<ul style=\"list-style-type:disc\"> <li>Your credit card will be charged at time of purchase.</li> <li>Shipping is only available to the 48 contiguous United States and not available to PO Box addresses.</li> <li>Standard shipping takes 5-7 business days from ship date, expedited options available.</li> </ul>",
+      "property_name": "Order & Shipping"
+    },
+    {
+      "id": 436,
+      "product_id": 186,
+      "property_id": 14,
+      "value": "We accept returns (excluding food), and will provide a full refund for the price of the item. Items must be shipped back within 30 days of receipt in their original packaging and condition. To make a return, please email market@blueapron.com and we will provide you with the return address as well as any shipping instructions that may apply.",
+      "property_name": "Returns Policy"
+    }
+  ],
+  "classifications": [
+    {
+      "taxon_id": 134,
+      "position": 3,
+      "taxon": {
+        "id": 134,
+        "name": "Essentials",
+        "pretty_name": "Categories -> Essentials",
+        "permalink": "categories/essentials",
+        "parent_id": 1,
+        "taxonomy_id": 1,
+        "taxons": [
+
+        ]
+      }
+    }
+  ],
+  "cms_text": ""
+}

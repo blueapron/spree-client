@@ -458,6 +458,23 @@ describe '#patch_order' do
     end
   end
 
+  describe '#get_product_by_sku' do
+    let(:sku) { '65003203' }
+    subject { spree_client.get_product_by_sku(sku) }
+
+    context 'when response is 200' do
+      before(:each) do
+        stubs.get("/api/products/sku/#{sku}") do |env|
+          validate_json_request(env)
+          [200, {'Content-Type' => 'application/json'}, read_fixture_file('get_api_products_sku.json')]
+        end
+        expect(spree_client).to receive(:connection).and_return(connection)
+      end
+
+      it_behaves_like "a Hashie::Mash"
+    end
+  end
+
   describe '#get_products' do
     let(:params) { {} }
 
