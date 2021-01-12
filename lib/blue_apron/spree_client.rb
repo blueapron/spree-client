@@ -316,7 +316,13 @@ module BlueApron
       end
 
       def sanitize_html(s)
-        Sanitize.fragment(s, Sanitize::Config::RELAXED)
+        Sanitize.fragment(s, sanitize_config)
       end
+
+      def sanitize_config
+        @sanitize_config ||= begin
+          attrs = { 'a' => Sanitize::Config::RELAXED[:attributes]['a'] + ['target'] }
+          Sanitize::Config.merge(Sanitize::Config::RELAXED, attributes: attrs)
+        end
   end
 end
