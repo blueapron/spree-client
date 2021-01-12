@@ -324,5 +324,6 @@ module BlueApron
           attrs = { 'a' => Sanitize::Config::RELAXED[:attributes]['a'] + ['target'] }
           Sanitize::Config.merge(Sanitize::Config::RELAXED, attributes: attrs)
         end
+      end
   end
 end
